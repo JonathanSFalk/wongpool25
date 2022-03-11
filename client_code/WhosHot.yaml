@@ -1,0 +1,35 @@
+container:
+  type: ColumnPanel
+  event_bindings: {}
+  properties: {col_widths: '{}'}
+components:
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: 'Who''s Hot: Homers in the Last 10 Days', font_size: 20, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_1
+  layout_properties: {grid_position: 'JDIJFF,FZCBMN'}
+- type: DataGrid
+  properties:
+    role: null
+    columns:
+    - {width: 158, title: Player, id: QCGULM, data_key: player, expand: false}
+    - {width: 64, title: Homers, id: LYUEMW, data_key: hr, expand: false}
+    auto_header: true
+    tooltip: ''
+    border: ''
+    foreground: ''
+    rows_per_page: 20
+    visible: true
+    show_page_controls: true
+    spacing_above: small
+    spacing_below: small
+    background: ''
+  name: data_grid_1
+  layout_properties: {grid_position: 'FQYZIG,TTQUBY'}
+  components:
+  - type: RepeatingPanel
+    properties: {spacing_above: none, spacing_below: none, item_template: RowTemplate5}
+    name: repeating_panel_1
+    layout_properties: {}

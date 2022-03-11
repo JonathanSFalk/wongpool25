@@ -1,0 +1,19 @@
+container:
+  type: ColumnPanel
+  event_bindings: {}
+  properties: {col_widths: '{}'}
+components:
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: 'Players --> Teams
+
+      ', font_size: 20, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+    italic: false, background: '', bold: true, underline: false, icon: ''}
+  name: label_1
+  layout_properties: {grid_position: 'HXDULO,TJEWSJ'}
+- type: LinearPanel
+  properties: {}
+  name: p2teams
+  layout_properties: {grid_position: 'GBCWWK,LGTYEH'}
+  event_bindings: {show: p2teams_show}
+is_package: true

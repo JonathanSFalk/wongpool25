@@ -1,0 +1,14 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{"ZTOPLS":50,"HXKHTG":10}'}
+components:
+- type: Label
+  properties: {}
+  name: label_1
+  layout_properties: {grid_position: 'WGVOUD,ZTOPLS'}
+- type: Label
+  properties: {}
+  name: label_2
+  layout_properties: {grid_position: 'WGVOUD,HXKHTG'}
+is_package: true
+item_type: {table_id: null}

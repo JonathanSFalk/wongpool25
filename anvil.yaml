@@ -1,0 +1,272 @@
+dependencies: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/users.yml
+  client_config: {allow_signup: true, enable_automatically: true, use_email: true,
+    confirm_email: false, allow_remember_me: true, remember_me_days: 365}
+  server_config: {user_table: users}
+- source: /runtime/services/anvil/email.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/google.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/secrets.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/stripe.yml
+  client_config: {}
+  server_config: {}
+startup: {type: module, module: Module1}
+package_name: Wongpool_2021
+allow_embedding: false
+name: Clone of Wongpool 2021 Season
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox}
+metadata: {}
+startup_form: HomePage
+native_deps: {head_html: ''}
+db_schema:
+  teams:
+    title: Teams
+    client: search
+    server: full
+    columns:
+    - name: Teamnum
+      admin_ui: {width: 105}
+      type: number
+    - name: Teamname
+      admin_ui: {width: 200}
+      type: string
+    - name: P1
+      admin_ui: {width: 61}
+      type: number
+    - name: P2
+      admin_ui: {width: 54}
+      type: number
+    - name: P3
+      admin_ui: {width: 58}
+      type: number
+    - name: P4
+      admin_ui: {width: 60}
+      type: number
+    - name: P5
+      admin_ui: {width: 60}
+      type: number
+    - name: P6
+      admin_ui: {width: 58}
+      type: number
+    - name: P7
+      admin_ui: {width: 61}
+      type: number
+    - name: P8
+      admin_ui: {width: 84}
+      type: number
+    - name: April
+      admin_ui: {width: 74}
+      type: number
+    - name: June
+      admin_ui: {width: 76}
+      type: number
+    - name: July
+      admin_ui: {width: 70}
+      type: number
+    - name: August
+      admin_ui: {width: 97}
+      type: number
+    - name: September
+      admin_ui: {width: 109}
+      type: number
+    - name: Total
+      admin_ui: {width: 98}
+      type: number
+    - name: Owner
+      admin_ui: {width: 200}
+      type: string
+    - name: May
+      admin_ui: {width: 71}
+      type: number
+    - name: Paid
+      admin_ui: {width: 200}
+      type: bool
+  players:
+    title: Players
+    client: search
+    server: full
+    columns:
+    - name: pnum
+      admin_ui: {width: 87}
+      type: number
+    - name: plahman
+      admin_ui: {width: 100}
+      type: string
+    - name: fullname
+      admin_ui: {width: 134}
+      type: string
+    - name: plast
+      admin_ui: {width: 135}
+      type: string
+    - name: lookup
+      admin_ui: {width: 169}
+      type: number
+    - name: Weight
+      admin_ui: {width: 200}
+      type: number
+    - name: pbbref
+      admin_ui: {width: 200}
+      type: string
+  homers:
+    title: Homers
+    client: search
+    server: full
+    columns:
+    - name: plahman
+      admin_ui: {width: 200}
+      type: string
+    - name: date
+      admin_ui: {width: 104}
+      type: string
+    - name: gameid
+      admin_ui: {width: 155}
+      type: string
+    - name: homers
+      admin_ui: {width: 95}
+      type: number
+    - name: last_updated
+      admin_ui: {width: 200}
+      type: datetime
+  mlbteams:
+    title: mlbteams
+    client: search
+    server: full
+    columns:
+    - name: teamid
+      admin_ui: {width: 200}
+      type: number
+    - name: teamname
+      admin_ui: {width: 200}
+      type: string
+    - name: teamcode
+      admin_ui: {width: 200}
+      type: string
+    - name: tname_short
+      admin_ui: {width: 200}
+      type: string
+  users:
+    title: Users
+    client: none
+    server: full
+    columns:
+    - name: email
+      admin_ui: {width: 200}
+      type: string
+    - name: enabled
+      admin_ui: {width: 100}
+      type: bool
+    - name: signed_up
+      admin_ui: {width: 200}
+      type: datetime
+    - name: password_hash
+      admin_ui: {width: 200}
+      type: string
+    - name: confirmed_email
+      admin_ui: {width: 200}
+      type: bool
+    - name: email_confirmation_key
+      admin_ui: {width: 200}
+      type: string
+    - name: n_password_failures
+      admin_ui: {width: 200}
+      type: number
+    - name: last_login
+      admin_ui: {width: 200}
+      type: datetime
+    - name: owner
+      admin_ui: {width: 190}
+      type: string
+    - name: remembered_logins
+      admin_ui: {width: 200}
+      type: simpleObject
+  phmdat:
+    title: phmdat
+    client: search
+    server: full
+    columns:
+    - name: Player
+      admin_ui: {width: 200}
+      type: link_single
+      target: players
+    - name: April
+      admin_ui: {width: 77}
+      type: number
+    - name: May
+      admin_ui: {width: 71}
+      type: number
+    - name: June
+      admin_ui: {width: 71}
+      type: number
+    - name: July
+      admin_ui: {width: 95.66669999999999}
+      type: number
+    - name: August
+      admin_ui: {width: 82}
+      type: number
+    - name: September
+      admin_ui: {width: 118.6667}
+      type: number
+    - name: Total
+      admin_ui: {width: 79}
+      type: number
+    - name: pnum
+      admin_ui: {width: 86}
+      type: number
+    - name: plast
+      admin_ui: {width: 92}
+      type: string
+    - name: plahman
+      admin_ui: {width: 114}
+      type: string
+    - name: lookup
+      admin_ui: {width: 200}
+      type: number
+    - name: fullname
+      admin_ui: {width: 200}
+      type: string
+  graphics:
+    title: Graphics
+    client: none
+    server: full
+    columns:
+    - name: What
+      admin_ui: {width: 200}
+      type: string
+    - name: Media
+      admin_ui: {width: 200}
+      type: media
+secrets:
+  sendgrid:
+    value: {? '' : jJyixqklYkFmkvL0IK7wBiav1QQEhf54SoEtJNeZ9DFIZNS4Jzbi20qkvE2mvBrK531KG3iG9nhIOlm5IJyy9W9i3eBFtiQHq+u3Y/1EFRtcURKhQJZVOAj2UkDW2Vnl5snG1nyanCsAXRNoSqqtVgvsb/B1eINxYQCa6EAWchwiIb5+JfVUghY8gSgEs9pU+0gJnFZFuBCXwP0jK5b5XsgxJn0=}
+    type: secret
+  paypal_client:
+    value: {? '' : 05PTg8Kmf0U0TNe9ecqkWV1TSxvjuIgeud6+0rbmdFyh5J7qGqmj89LN7JMZl4Rq9i3SVF6AMF+mz9eXmAq0pk8dUc/VTs8NA9uTevCWmNLYTv4gdRI7Ojz/8xdEGrMlLdVxUvlJPAfaZ/WFG+hyLT186tVl0GHfi5DBoDEi5lIAJjFWNjcNck6yB9ghjTDjkuMWO/hBZBvXOwtIozcYNV6gDqmnpQp1cz/BW2kwgw==}
+    type: secret
+  paypal_secret:
+    value: {? '' : Zxc126j+HbYbPJLpHqiDLdfum4ukcPlWT9Wf2r/Q4UtsbDRoph/ZRJfmcCi9mIq/k3QMagZhXz+udoX4ppYO2Hp4QVnB8dbHMY6qzsVoxZP8tnFAQONEahY31MsDSEiWoRVdayA8cw8Xz+AcwpnqEa+K4Qld71j+qjGYOpuwxrKf5vfAtko8IOA3wSTosYVtKOPazTH/niOFoQb5kzjEmurNCYtq2EsqLdtEKMSNwg==}
+    type: secret
+  stripe-emergency-bypass:
+    value: {? '' : 0K+oViYHUrAapNBpdZ7emmX3qHw7oMdXPLsUjq4PKG4VGUL7hSKmy4xPef9gqZL47k2rmlNYOsMl4pbPB2Qa19AJwI9APWhdnt9uklT4bVkMOuuoSeN6XVhWcOvOTR4Os/3s+Zvor7NO0L0sqEG0A9oWVp3Cygg=}
+    type: secret
+  stripe-live-key:
+    value: {? '' : ValmhsuFJ1jDfABD68jC3Lx7MC3w9L4AwHRVL2DX8umOWhsYTxySJLtrDd8XACky2PIGhSeXQDBoNGbDlkplFW76Djqin5CJk3nJei5UhUCeiq0tSmSiNUS/IMii3Kal40EFA+yec/25S0D+go4tllVFkRlJZCRjcmnkVJuqBeP6U1GOA8QtaR9BHkegJ8Aw+6Tjt/Q38pknB/jaYlBhKcVH1paKn+UwSqFzOtX761au4wLiHKcmlzPan2SawQYhTK7SyqLbT5AD+w==}
+    type: secret
+  stripe-test-public:
+    value: {? '' : bRJVgrpQsYDijtLMsF2aqvXg6Gn7WQxap9Y9/IFU4eJj2X0wMtEYMAehw7aVwMgev1aZvQWRVG/7WQOzJ47Mw3Bd4OH5LIv/pXYvbRKUQ9cAZA0boJEFwNeN4xO3QMc2dAJTqhJbNHYQl0JVvW50/uk5onl8Iyt7NXiZmzM+HgcTSwGEH2Zya35Oe0MzMdnj4CZQfyQYF7BdK+Ubx0wf79PkL9/msWBRTgojXqYpz3xFpiR+oc6FjtRGMU8EuNSGcVjxiAlL0SJMuw==}
+    type: secret
+  stripe-test-key:
+    value: {? '' : B1vCvLjGs2f9DxzNm3atUEj6ZMZlFTrI1S162nhaHonjKizJtF9fbmaSB8i30upZEnw3NwSVLJcIW3pdqtbUTH1KXSQ0c5JTn40bbc6/TIPIo/M0Fa8Lz9ahrAGkz8gbO4BPZ+5fYk/57ol3me5HhZoxxOuXiGi6c5SJLx2qkQ8f9rAOQNT5cJ3WjLFSHoI4OH0eVnU69vJ9lZFODFpcm1vJMy1xf4SLVHDvNkCDxaTXfXO4ks0Byc0a1l3Ev6FaPOQNl57Vp7D/bw==}
+    type: secret
+  stripe-live-public:
+    value: {? '' : zZ3XDZTfTCdFN/krDXZUpO1ZcrqUM+UqWKOVgznk4/xx1XO6BilrqNzPzpq+s5Zw561WkVJFjB6zmu2Z94HCLtAV5kAd4QZh6A1vKLUKNbDkSJIf/NEBdfVxn/hZyr/WentqTDdyFr2yMnXJHggPZKv3Q+MFZXATS0h4sFihelWu/wVxLbun4s1GA3CRcg6VL7+HSFMC3eJ7DndQetg+0F5SzsAIirpvJBOehI4EpOmft2S0g7qwqLoYcvbAS/xJNU58qIjeiuYX8w==}
+    type: secret
+renamed: true

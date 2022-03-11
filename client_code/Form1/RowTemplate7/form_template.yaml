@@ -1,0 +1,69 @@
+container: {type: DataRowPanel}
+components:
+- type: Label
+  properties: {}
+  name: label_1
+  layout_properties: {column: TCRLSE}
+  data_bindings:
+  - {property: text, code: 'self.item[0]'}
+- type: Label
+  properties: {}
+  name: label_2
+  layout_properties: {column: BYTQIA}
+  data_bindings:
+  - {property: text, code: 'self.item[1]'}
+- type: Label
+  properties: {}
+  name: label_3
+  layout_properties: {column: WXHVUG}
+  data_bindings:
+  - {property: text, code: 'self.item[2]'}
+- type: Label
+  properties: {}
+  name: label_4
+  layout_properties: {column: DFKNTQ}
+  data_bindings:
+  - {property: text, code: 'self.item[3]'}
+- type: Label
+  properties: {}
+  name: label_5
+  layout_properties: {column: OGZTXY}
+  data_bindings:
+  - {property: text, code: 'self.item[4]'}
+- type: Label
+  properties: {}
+  name: label_6
+  layout_properties: {column: AZNAOC}
+  data_bindings:
+  - {property: text, code: 'self.item[5]'}
+- type: Label
+  properties: {}
+  name: label_7
+  layout_properties: {column: JLCNZX}
+  data_bindings:
+  - {property: text, code: 'self.item[6]'}
+- type: Label
+  properties: {}
+  name: label_8
+  layout_properties: {column: YLBRTD}
+  data_bindings:
+  - {property: text, code: 'self.item[7]'}
+- type: Label
+  properties: {}
+  name: label_9
+  layout_properties: {column: AJOOLU}
+  data_bindings:
+  - {property: text, code: 'self.item[8]'}
+- type: Label
+  properties: {}
+  name: label_10
+  layout_properties: {column: RLRWVL}
+  data_bindings:
+  - {property: text, code: 'self.item[9]'}
+- type: Label
+  properties: {}
+  name: label_11
+  layout_properties: {column: WXEHSB}
+  data_bindings:
+  - {property: text, code: 'self.item[10]'}
+is_package: true
