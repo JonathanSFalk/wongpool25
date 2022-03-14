@@ -132,7 +132,7 @@ def update():
 #open_form('HomePage')
 signup_with_form()
 open_form('Form1')
-open_form('TeamPicker')    
+#open_form('TeamPicker')    
 #open_form('SplashScreen')
 #pdf = anvil.server.call('pdf2')
 #anvil.media.download(pdf)
