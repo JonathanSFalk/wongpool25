@@ -117,6 +117,11 @@ class TeamPicker(TeamPickerTemplate):
       open_form('ShowTeams',my_teams)
     return    
 
+  def form_show(self, **event_args):
+    """This method is called when the HTML panel is shown on the screen"""
+    pass
+
+
 
 
 

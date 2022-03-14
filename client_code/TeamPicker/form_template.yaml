@@ -48,7 +48,7 @@ container:
       \  anvil.call($('#picker_page'), \"page_resize_event\", calculatePageWidth());\n\
       \  }\n\n  var doit;\n  window.onresize = function(){\n    clearTimeout(doit);\n\
       \    doit = setTimeout(resizedw, 100);\n  };  \n  \n</script>\n"}
-  event_bindings: {show: form_show}
+  event_bindings: {}
 components:
 - type: FlowPanel
   properties: {}
