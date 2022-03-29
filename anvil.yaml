@@ -104,14 +104,14 @@ db_schema:
     - name: fullname
       admin_ui: {width: 134}
       type: string
+    - name: Weight
+      admin_ui: {width: 89}
+      type: number
     - name: plast
       admin_ui: {width: 135}
       type: string
     - name: lookup
       admin_ui: {width: 169}
-      type: number
-    - name: Weight
-      admin_ui: {width: 200}
       type: number
     - name: pbbref
       admin_ui: {width: 200}
