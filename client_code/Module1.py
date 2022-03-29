@@ -104,7 +104,7 @@ def update():
     return
 
 login_class=-1
-while login_class==-1:
+while login_class==-1 or login_class==0:
     login_class = alert('Welcome to Wongpool 2022\r\n Sign Up, Log in or continue as guest',large=True,
                     buttons=[('Guest',0),('Signup',1),("Login",2)])
     if login_class==0:
