@@ -131,9 +131,9 @@ while login_class==-1 or login_class==0:
 #open_form('Analytics')
 #open_form('HomePage')
 #signup_with_form()
-if user['email'] == 'me':
-  open_form('Form1')
+#if user['email'] == 'me':
+#  open_form('Form1')
 #open_form('TeamPicker')    
 #open_form('SplashScreen')
-#pdf = anvil.server.call('pdf2')
-#anvil.media.download(pdf)
+pdf = anvil.server.call('pdf2')
+anvil.media.download(pdf)
