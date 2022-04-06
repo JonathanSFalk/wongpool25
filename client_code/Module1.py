@@ -103,24 +103,24 @@ def update():
             app_tables.updates.add_row(Update='Nothing to Update',RunTime=timerun)
     return
 
-login_class=-1
-while login_class==-1 or login_class==0:
-    login_class = alert('Welcome to Wongpool 2022\r\n Sign Up, Log in or continue as guest',large=True,
-                    buttons=[('Guest',0),('Signup',1),("Login",2)])
-    if login_class==0:
-        alert('There is nothing to see as a guest before the season starts.\r\nTo pick a team, create an ID and log in as a user',large=True)
-    elif login_class==1:
-      signup_with_form()
-      user = data_access.the_user()
-      if user is None:
-        user = 'Guest'
-        login_class = 0
-    else:
-      anvil.users.login_with_form(allow_cancel=True,allow_remembered=True)
-      user = data_access.the_user()
-      if user is None: 
-         user='Guest'
-         login_class = 0 
+#login_class=-1
+#while login_class==-1 or login_class==0:
+#    login_class = alert('Welcome to Wongpool 2022\r\n Sign Up, Log in or continue as guest',large=True,
+#                    buttons=[('Guest',0),('Signup',1),("Login",2)])
+#    if login_class==0:
+#        alert('There is nothing to see as a guest before the season starts.\r\nTo pick a team, create an ID and log in as a user',large=True)
+#    elif login_class==1:
+#      signup_with_form()
+#      user = data_access.the_user()
+#      if user is None:
+#        user = 'Guest'
+#        login_class = 0
+#    else:
+#      anvil.users.login_with_form(allow_cancel=True,allow_remembered=True)
+#      user = data_access.the_user()
+#      if user is None: 
+#         user='Guest'
+#         login_class = 0 
   
  
 #update_text = update()
@@ -134,6 +134,6 @@ while login_class==-1 or login_class==0:
 #if user['email'] == 'me':
 #  open_form('Form1')
 #open_form('TeamPicker')    
-#open_form('SplashScreen')
-pdf = anvil.server.call('pdf2')
-anvil.media.download(pdf)
+open_form('SplashScreen')
+#pdf = anvil.server.call('pdf2')
+#anvil.media.download(pdf)
