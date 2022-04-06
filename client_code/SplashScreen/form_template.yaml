@@ -2,8 +2,8 @@ container:
   type: HtmlTemplate
   properties: {tooltip: '', background: '', foreground: '', border: '', visible: true,
     role: null, html: "\n<div class = \"jumbotron\">\n  <div container> \n\t<h1 class=\"\
-      text-center\">Danny Wong Home Run Pool 2021</h1>\n    <h1 class=\"text-center\"\
-      >2022 Coming Soon!!!!!</h1>  \n\t<h4> <b>Hank Aaron, April 8th, 1974</b></h4>\n\
-      \    </div> \n</div>\n  \n\n"}
+      text-center\">Danny Wong Home Run Pool 2022</h1>\n    <h1 class=\"text-center\"\
+      >Live Soon!!!!!</h1>  \n\t<h4> <b>Hank Aaron, April 8th, 1974</b></h4>\n   \
+      \ </div> \n</div>\n  \n\n"}
 components: []
 is_package: true
