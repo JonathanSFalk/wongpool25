@@ -246,6 +246,6 @@ db_schema:
       type: media
 secrets:
   sendgrid:
-    value: {? '' : yea0rp1IKZ62Z6IR36CnA0wYqzu4lEIH7ufSEl/ONLBWiGX4BK70qb8nh/AQ2Awdc5JSynk3WK7vll0E/wr1/jv25+UiV/RyvUO9D+NC4Q3LgTW7kEfKG+DShm42nTgJWsvhSnUK4VhnNY+YzKsH7Q9LdZckPvArHaqr8MPYQ1NBR2iyUmLoFAjIbuWuMsLuWPACp/7ysD2ezNEV4SlOl8wmqbw=}
+    value: {? '' : N2IJqSUF41vVDcp41++6UAssKzqeciaXl/amBaoUUYXx+g7GnAQvRpwwQAxTyHHd3R+h7Vvp1YSRFMy0gGMJ71aGcpNWLUJGWPjt447MlkFQHSL3cP4/3LINscUGLetzEOpRGf7mPWOGviqyC/YPtPpAq72Szdq4eVk32YwTaMglaYCExlMSewda/jCwNoKNcM8dxcYUwUnn6V1BJDOE1nQ2+gg=}
     type: secret
 renamed: true
