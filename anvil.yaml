@@ -13,10 +13,10 @@ services:
 - source: /runtime/services/google.yml
   client_config: {}
   server_config: {}
-- source: /runtime/services/anvil/secrets.yml
+- source: /runtime/services/stripe.yml
   client_config: {}
   server_config: {}
-- source: /runtime/services/stripe.yml
+- source: /runtime/services/anvil/secrets.yml
   client_config: {}
   server_config: {}
 startup: {type: module, module: Module1}
@@ -248,7 +248,4 @@ secrets:
   sendgrid:
     value: {? '' : yea0rp1IKZ62Z6IR36CnA0wYqzu4lEIH7ufSEl/ONLBWiGX4BK70qb8nh/AQ2Awdc5JSynk3WK7vll0E/wr1/jv25+UiV/RyvUO9D+NC4Q3LgTW7kEfKG+DShm42nTgJWsvhSnUK4VhnNY+YzKsH7Q9LdZckPvArHaqr8MPYQ1NBR2iyUmLoFAjIbuWuMsLuWPACp/7ysD2ezNEV4SlOl8wmqbw=}
     type: secret
-  new_key:
-    value: {? '' : ECNjBJ87tOE/dMjKpWs7W20udmTyFUVSq1FtOXENdcKaRWOSHD6ISD3cLio8K7JlIA3Kcx8bNY6PjA54dX3AWZ+FkAmAvo584h5tmY2h++l8CqyZ07nJKiIf3fBLm/5RVLXX11PbwEKL28aeWca3YHVeQ1x7vdM=}
-    type: key
 renamed: true
