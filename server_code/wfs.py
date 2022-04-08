@@ -100,7 +100,7 @@ def getresults():
     if last_month==10:
       last_month=9
     # Comment out ofter last games  
-    last_month = 10  
+    #last_month = 10  
     # Create monthly winners: results code 1
     for i in range(4,last_month):
         standings = monthstandings(i)
