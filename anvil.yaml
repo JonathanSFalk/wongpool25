@@ -23,7 +23,8 @@ startup: {type: module, module: Module1}
 package_name: Wongpool_2021
 allow_embedding: false
 name: Wongpool 2022
-runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox}
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
+  server_spec: null}
 metadata: {}
 startup_form: HomePage
 native_deps: {head_html: ''}
