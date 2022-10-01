@@ -29,26 +29,6 @@ metadata: {}
 startup_form: HomePage
 native_deps: {head_html: ''}
 db_schema:
-  homers:
-    title: Homers
-    client: search
-    server: full
-    columns:
-    - name: plahman
-      admin_ui: {width: 200}
-      type: string
-    - name: date
-      admin_ui: {width: 104}
-      type: string
-    - name: gameid
-      admin_ui: {width: 155}
-      type: string
-    - name: homers
-      admin_ui: {width: 95}
-      type: number
-    - name: last_updated
-      admin_ui: {width: 200}
-      type: datetime
   teams:
     title: Teams
     client: search
@@ -140,6 +120,26 @@ db_schema:
     - name: teams
       admin_ui: {width: 200}
       type: simpleObject
+  homers:
+    title: Homers
+    client: search
+    server: full
+    columns:
+    - name: plahman
+      admin_ui: {width: 200}
+      type: string
+    - name: date
+      admin_ui: {width: 104}
+      type: string
+    - name: gameid
+      admin_ui: {width: 155}
+      type: string
+    - name: homers
+      admin_ui: {width: 95}
+      type: number
+    - name: last_updated
+      admin_ui: {width: 200}
+      type: datetime
   mlbteams:
     title: mlbteams
     client: search

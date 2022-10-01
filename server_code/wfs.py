@@ -74,7 +74,7 @@ def hothomers():
     gid = app_tables.homers.search(tables.order_by('date',ascending=False))[0]['date']   
     if len(gid)>0:
       dmxstr = gid
-      dmx = date(int(dmxstr[0:4]),int(dmxstr[5:7]),int(dmxstr[9:]))
+      dmx = date(int(dmxstr[0:4]),int(dmxstr[5:7]),int(dmxstr[8:]))
     else:
       dmx = date(2021,4,1)
       dmxstr = '2021-04-01'
