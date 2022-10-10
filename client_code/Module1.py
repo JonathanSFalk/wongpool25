@@ -12,6 +12,7 @@ from .signup import signup
 import json
 import datetime
 
+print(anvil.app.environment.name)
 
 def get_all_homers(date):
     result = anvil.server.call('player_list')
