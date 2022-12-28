@@ -129,9 +129,8 @@ def update():
             emailbody = emailbody + "[Unchanged: " + fullname + " on " + date + " hit " + str(homers) + "]\n"
     if hrlist==[]:
         emailbody = emailbody + 'No Homers Hit'
-    print(anvil.server.call('get_my_secret','sendgrid'))
 
-    sg = SendGridAPIClient(get_my_secret(sendgrid))
+    sg = SendGridAPIClient(get_my_secret('sendgrid'))
     message = Mail(
     from_email='webmaster@wongpool.com',
     to_emails=['jonathansfalk@gmail.com'],  
