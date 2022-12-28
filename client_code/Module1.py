@@ -14,6 +14,7 @@ import datetime
 
 print(anvil.app.environment.name)
 
+
 def get_all_homers(date):
     result = anvil.server.call('player_list')
     lookup = []
@@ -66,44 +67,46 @@ def signup_with_form():
       return
   
   
-def update():
-    timerun = datetime.datetime.now()
-    rundays = 1
-    daterange=[]
+#def update():
+#    timerun = datetime.datetime.now()
+#    rundays = 1
+#    daterange=[]
 #    engine=dbconn.engine()
 #    for i in range(1,rundays+1):
 #    	daterange.append((timerun + datetime.timedelta(days=-i)).strftime("%m/%d/%Y"))
-    hrlist=[]
-    daterange = ['2020-09-15']
+ #   hrlist=[]
+ #   daterange = ['2020-09-15']
   
-    for d in daterange:
-    	h = get_all_homers(d)
-    	hrlist.extend(h)
-    for hr in hrlist:
-        plahman = hr[0]
+#    for d in daterange:
+#    	h = get_all_homers(d)
+#    	hrlist.extend(h)
+##       plahman = hr[0]
 #        print(hr)
-        hometeam = app_tables.mlbteams.get(teamid=hr[3])['teamcode']
-        gid = hometeam + hr[1].replace('-','')
-        date = hr[1]
-            # Second game of doubleheader
-        if hr[2]==2:
-            gid = gid + '2'
-            # first game of doubleheader
-        elif hr[2]==1 and (hr[5]=="Y" or hr[5]=="S"):
-            gid = gid + '1'
-            #single game
-        else:
-            gid = gid + '0'
-        homers = hr[4]
-        update_dict={'date':date,'homers':homers,'plahman':plahman,'gameid':gid,'last_updated':timerun}
-        emailbody = anvil.server.call('write_to_homers',update_dict)
-        if emailbody !='':
-            del update_dict['last_updated']
-            app_tables.updates.add_row(Update=update_dict,RunTime=timerun)
-        else:  
-            app_tables.updates.add_row(Update='Nothing to Update',RunTime=timerun)
-    return
+#        hometeam = app_tables.mlbteams.get(teamid=hr[3])['teamcode']
+#        gid = hometeam + hr[1].replace('-','')
+#        date = hr[1]
+#            # Second game of doubleheader
+#        if hr[2]==2:
+#            gid = gid + '2'
+#            # first game of doubleheader
+#        elif hr[2]==1 and (hr[5]=="Y" or hr[5]=="S"):
+#            gid = gid + '1'
+#            #single game
+#        else:
+#            gid = gid + '0'
+#        homers = hr[4]
+#       update_dict={'date':date,'homers':homers,'plahman':plahman,'gameid':gid,'last_updated':timerun}
+#        emailbody = anvil.server.call('write_to_homers',update_dict)
+#        if emailbody !='':
+#            del update_dict['last_updated']
+#            app_tables.updates.add_row(Update=update_dict,RunTime=timerun)
+#        else:  
+#            app_tables.updates.add_row(Update='Nothing to Update',RunTime=timerun)
+#    return
 
+anvil.server.call('start_update')
+
+  
 #login_class=-1
 #while login_class==-1 or login_class==0:
 #    login_class = alert('Welcome to Wongpool 2022\r\n Sign Up, Log in or continue as guest',large=True,

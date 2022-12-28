@@ -48,62 +48,60 @@ def get_http(url):
   return anvil.http.request(url,json=True)
 
 def get_all_homers(date):
-    result = app_tables.players.search()    
+    result = player_list()
     lookup = []
     retn = []
     ldict = {}
     for r in result:
         lookup.append(r['lookup'])
-        ldict[r['lookup']] = [r['plahman'],r['fullname']]    
+        ldict[r['lookup']] = [r['plahman'],r['fullname']]
     urlsched = 'https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate={}&endDate={}'.format(date,date)
-    response = requests.get(urlsched)
-    schedule = json.loads(response.text)
+    schedule = anvil.http.request(urlsched,json=True)
+    if len(schedule['dates'])==0:
+        return retn
     for games in schedule['dates'][0]['games']:
+        print(games['gamePk'])
         dh = games['doubleHeader']
         if games['gameType']=='R':
             thegameurl = 'http://statsapi.mlb.com/api/v1/game/{}/boxscore'.format(games['gamePk'])
-            response = requests.get(thegameurl)
-            thegame = json.loads(response.text)
-            app_tables.gamejsons.add_row(Date=date,GameID=str(games['gamePk']),JSON=thegame)
-#            for l in lookup:
-#                if 'ID' + str(l) in thegame['teams']['home']['players']:
-#                    homers = thegame['teams']['home']['players']['ID' + str(l)]['stats']['batting'].get('homeRuns',0)
-#                    if homers > 0:
-#                        gn = games['gameNumber']
-#                        home = thegame['teams']['home']['team']['id']
-#                        retn.append([ldict[l][0],date,gn,home,homers,dh])
-#                elif 'ID' + str(l) in thegame['teams']['away']['players']:
-#                    homers = thegame['teams']['away']['players']['ID' + str(l)]['stats']['batting'].get('homeRuns',0)
-#                    if homers > 0:
-#                        gn = games['gameNumber']
-#                        home = thegame['teams']['home']['team']['id']
-#                        retn.append([ldict[l][0],date,gn,home,homers,dh])
-#    return retn
-    return 
+            thegame = anvil.http.request(thegameurl,json=True)
+            for l in lookup:
+                if 'ID' + str(l) in thegame['teams']['home']['players']:
+                    homers = thegame['teams']['home']['players']['ID' + str(l)]['stats']['batting'].get('homeRuns',0)
+                    if homers > 0:
+                        gn = games['gameNumber']
+                        home = thegame['teams']['home']['team']['id']
+                        retn.append([ldict[l][0],date,gn,home,homers,dh])
+                elif 'ID' + str(l) in thegame['teams']['away']['players']:
+                    homers = thegame['teams']['away']['players']['ID' + str(l)]['stats']['batting'].get('homeRuns',0)
+                    if homers > 0:
+                        gn = games['gameNumber']
+                        home = thegame['teams']['home']['team']['id']
+                        retn.append([ldict[l][0],date,gn,home,homers,dh])
+    return retn
 
-@anvil.server.callable  
+@anvil.server.background_task
 def update():
-    emailbody = ""
-    timerun = datetime.datetime.now()
-    rundays = 1
-    daterange=[]
-#    engine=dbconn.engine()
-#    for i in range(1,rundays+1):
-#    	daterange.append((timerun + datetime.timedelta(days=-i)).strftime("%m/%d/%Y"))
+    timerun = datetime.now()
+    edt_timerun = pytz.timezone("UTC").localize(timerun).astimezone(pytz.timezone('America/New_York'))
+    fdate = datetime.strftime(timerun - timedelta(days=1),'%Y-%m-%d')
     hrlist=[]
-    daterange = ['2020-09-15']
-  
+    daterange = [fdate]
+    daterange = '2022-09-15'
+    print(daterange)
+    dr_to_print = ''
     for d in daterange:
-    	h = get_all_homers(d)
-    	print(d,h)
-    	hrlist.extend(h)
-
+        h = get_all_homers(d)
+        dr_to_print = dr_to_print + '\t' + d
+        hrlist.extend(h)
+    emailbody = 'Update run on ' + edt_timerun.strftime("%m/%d/%Y, %H:%M:%S") + \
+    '\r\n' + 'Range of dates run: ' + dr_to_print + '\r\n\r\n'
+    print(emailbody)
     for hr in hrlist:
         plahman = hr[0]
-        print(hr)
-        hometeam = app_tables.mlbteams.get(teamcode=hr[3])['tname_short']
-        gid = hometeam + hr[1][6:] + hr[1][0:2] + hr[1][3:5]
-        date = hr[1][6:] + '-' + hr[1][0:2] + '-' + hr[1][3:5]
+        hometeam = get_team_abbrev(hr[3])
+        gid = hometeam + hr[1].replace('-','')
+        date = hr[1]
             # Second game of doubleheader
         if hr[2]==2:
             gid = gid + '2'
@@ -114,27 +112,52 @@ def update():
         else:
             gid = gid + '0'
         homers = hr[4]
-        result = app_tables.homers.get(q.all_of(plahman=plahman,gameid=gameid))
-        fn = app_tables.players.get(plahman=plahman)['fullname']
+        result = get_homer(plahman,gid)
+        fullname = fn(plahman)
         if result is None:
-            app_tables.homers.add_row(date=date,gameid=gid,homers=homers,plahman=plahman,last_updated=timerun)           
-            z = update_phmdat(app_tables.homers.get(plahman=plahman,gameid=gameid),0)            
-            emailbody = emailbody + fn + " on " + date + " hit " + str(homers) + "\n"
+            update_dict={'date':date,'homers':homers,'plahman':plahman,'gameid':gid,'last_updated':edt_timerun}
+            write_to_homers(update_dict)
+            emailbody = emailbody + fullname + " on " + date + " hit " + str(homers) + "\n"
         elif result['homers'] != homers:
-            z = update_phmdat(result,homers-2*result['homers'])
-            
             result['homers'] = homers
-            emailbody = emailbody + fn + " on " + date + " changed to " + str(homers) + "\n"
+            emailbody = emailbody + fullname + " on " + date + " changed to " + str(homers) + "\n"
         else:
-            emailbody = emailbody + "[Unchanged: " + fn + " on " + date + " hit " + str(homers) + "]\n"
+            emailbody = emailbody + "[Unchanged: " + fullname + " on " + date + " hit " + str(homers) + "]\n"
+    if hrlist==[]:
+        emailbody = emailbody + 'No Homers Hit'
+    print(anvil.server.call('get_my_secret','sendgrid'))
 
+    sg = SendGridAPIClient(get_my_secret(sendgrid))
+    message = Mail(
+    from_email='webmaster@wongpool.com',
+    to_emails=['jonathansfalk@gmail.com'],  
+#    to_emails=['jonathansfalk@gmail.com','drwfood@hotmail.com'],
+    subject='Wongpool Update Report',
+    plain_text_content=emailbody)
 
-    outtab= "Program ran at " + timerun.strftime("%I:%M %p") + '\n'
-    outtab = outtab + '\n' + emailbody
-    if emailbody=="":
-        outtab = outtab + "No Homers Added"
-    return emailbody
+    response = sg.send(message)
+    players = player_list()
+    for p in players:
+       response = (p)
+    teams = team_list()
+    for t in teams:
+        check_a_team(t)
+    response = nocrash()
 
+    return response
+
+def nocrash():
+    sg = SendGridAPIClient(get_my_secret(sendgrid))
+    message = Mail(
+    from_email='webmaster@wongpool.com',
+    to_emails=['jonathansfalk@gmail.com'],
+    subject='Wongpool Crash Report',
+    plain_text_content="Update Program Completed")
+    response = sg.send(message)
+    return response
+  
+
+  
 @anvil.server.callable
 def update_phmdat(homer, change):
   '''Adds player-game to phmdat table'''
@@ -231,4 +254,9 @@ def get_homer(player,game):
 @anvil.server.callable
 def fn(player):
   return app_tables.players.get(plahman=player)['fullname']
+
+@anvil.server.callable
+def start_update():
+  anvil.server.launch_background_task('update')
+
                                
