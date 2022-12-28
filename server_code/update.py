@@ -141,10 +141,12 @@ def update():
     response = sg.send(message)
     players = player_list()
     for p in players:
-       response = (p)
+       anvil.server.task_state['Progress'] = p['plahman']
+       response = check(p) 
     teams = team_list()
     for t in teams:
         check_a_team(t)
+        anvil.server.task_state['Progress'] = t['Teamname']
     response = nocrash()
 
     return response
@@ -195,7 +197,7 @@ def update_phmdat(homer, change):
 @anvil.server.callable
 def check(p):
   '''Assumes the homer list is correct and checks phmdat tables'''
-  print(p['plahman'])
+#  print(p['plahman'])
   h = [0,0,0,0,0,0,0]
   hlist = app_tables.homers.search(plahman=p['plahman'])
   if hlist is not None:
@@ -232,7 +234,7 @@ def check(p):
       
 @anvil.server.callable
 def check_a_team(t):
-    print(t['Teamname'])
+#    print(t['Teamname'])
     mdict = {4:'April',5:'May',6:'June',7:'July',8:'August',9:'September','Total':'Total'}
     for m in mdict.keys():
       totalx = wfs.total(t,mdict[m])
