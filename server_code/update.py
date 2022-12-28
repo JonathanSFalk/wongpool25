@@ -89,7 +89,7 @@ def update():
     fdate = datetime.strftime(timerun - timedelta(days=1),'%Y-%m-%d')
     hrlist=[]
     daterange = [fdate]
-    daterange = '2022-09-15'
+    daterange = ['2022-09-15']
     print(daterange)
     dr_to_print = ''
     for d in daterange:
