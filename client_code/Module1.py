@@ -99,12 +99,15 @@ def signup_with_form():
 #        emailbody = anvil.server.call('write_to_homers',update_dict)
 #        if emailbody !='':
 #            del update_dict['last_updated']
-#            app_tables.updates.add_row(Update=update_dict,RunTime=timerun)
+#            app_tables.updatwhile notes.add_row(Update=update_dict,RunTime=timerun)
 #        else:  
 #            app_tables.updates.add_row(Update='Nothing to Update',RunTime=timerun)
 #    return
 
-anvil.server.call('start_update')
+def update_routine():
+    task = anvil.server.call('start_update')
+      
+update_routine()    
 
   
 #login_class=-1

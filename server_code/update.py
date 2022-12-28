@@ -86,6 +86,7 @@ def get_all_homers(date):
 
 @anvil.server.background_task
 def update():
+    anvil.server.task_state['Progress'] = 'Updating'
     timerun = datetime.now()
     edt_timerun = pytz.timezone("UTC").localize(timerun).astimezone(pytz.timezone('America/New_York'))
     fdate = datetime.strftime(timerun - timedelta(days=1),'%Y-%m-%d')
@@ -262,6 +263,16 @@ def fn(player):
 
 @anvil.server.callable
 def start_update():
-  anvil.server.launch_background_task('update')
-
+  task = anvil.server.launch_background_task('update')
+  print(task.get_state())
+  try:
+    p = task.get_state()['Progress']
+  except KeyError:
+    p = 'Initializing'
+  while not task.is_completed:
+    if task.get_state()['Progress'] != p:
+        print(p)
+        p = task.get_state()['Progress']
+    print('Complete')      
+  return task
                                
