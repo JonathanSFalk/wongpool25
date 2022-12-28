@@ -57,6 +57,7 @@ def get_all_homers(date):
         lookup.append(r['lookup'])
         ldict[r['lookup']] = [r['plahman'],r['fullname']]
     urlsched = 'https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate={}&endDate={}'.format(date,date)
+    print(urlsched)
     schedule = anvil.http.request(urlsched,json=True)
     if len(schedule['dates'])==0:
         return retn
