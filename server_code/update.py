@@ -265,10 +265,10 @@ def fn(player):
 def start_update():
   task = anvil.server.launch_background_task('update')
   print(task.get_state())
-  try:
-    p = task.get_state()['Progress']
-  except KeyError:
-    p = 'Initializing'
+  while True:
+    if task.get_state() != {}:
+      break
+  p = task.get_state()['Progress']
   while not task.is_completed:
     if task.get_state()['Progress'] != p:
         print(p)
