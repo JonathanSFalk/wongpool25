@@ -66,7 +66,7 @@ def signup_with_form():
 #      alert(f"We have sent a confirmation email to {d.email_box.text}.\n\nCheck your email, and click on the link.")
       return
   
-anvil.server.call('start_update')
+
 
 #def update():
 #    timerun = datetime.datetime.now()
