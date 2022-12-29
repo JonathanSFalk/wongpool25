@@ -266,11 +266,13 @@ def start_update():
   task = anvil.server.launch_background_task('update')
   therow = app_tables.update.get(Counter='Only')
   therow['Id'] = task.get_id()
+  print(therow['Id'])
 
   
 @anvil.server.http_endpoint("/results")
 def results():
     task_id = app_tables.update.get(Counter='Only')['Id'] 
+    print(task_id)
     task = anvil.server.get_background_task(task_id)
     status = task.get_termination_status()
     responses = {
