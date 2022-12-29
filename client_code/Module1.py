@@ -66,7 +66,8 @@ def signup_with_form():
 #      alert(f"We have sent a confirmation email to {d.email_box.text}.\n\nCheck your email, and click on the link.")
       return
   
-  
+anvil.server.call('start_update')
+
 #def update():
 #    timerun = datetime.datetime.now()
 #    rundays = 1
@@ -140,3 +141,5 @@ open_form('HomePage')
 #open_form('SplashScreen')
 #pdf = anvil.server.call('pdf2')
 #anvil.media.download(pdf)
+
+
