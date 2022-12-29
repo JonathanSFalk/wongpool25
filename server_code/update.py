@@ -266,15 +266,20 @@ def start_update():
   task = anvil.server.launch_background_task('update')
   therow = app_tables.update.get(Counter='Only')
   therow['Id'] = task.get_id()
-     
-@anvil.server.http_endpoint('/get_state')
-def state_query():
-# First, find the task
-  task_id = app_tables.update.get(Counter='Only')['Id'] 
-  task = anvil.server.get_background_task(task_id) 
-  if task.is_running():
-    return('Still running: ' + task.get_state().get('Progress'))
-  else:
-    return(task.get_termination_status()) 
+
+  
+@anvil.server.http_endpoint("/results")
+def results():
+    task_id = app_tables.update.get(Counter='Only')['Id'] 
+    task = anvil.server.get_background_task(task_id)
+    status = task.get_termination_status()
+    responses = {
+        None: {"status": 202, "body": "Running: " + task.get_state().get("Progress", None) },
+        "failed": {"status": 500, "body": "An error occurred whilst generating your dataset. Get Owen to have a look."},
+        "killed": {"status": 500, "body": "The background task to generate your dataset has been killed. Get Owen to have a look."},
+        "missing": {"status": 500,"body": "The background task to generate your dataset is AWOL. Get Owen to have a look"},
+        "completed": {"status": 200, "body": task.get_state().get("result", None)}
+    }
+    return anvil.server.HttpResponse(**responses[status])  
 
   
