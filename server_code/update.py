@@ -263,6 +263,7 @@ def fn(player):
 
 @anvil.server.callable
 def start_update():
+  ts = datetime.now()
   task = anvil.server.launch_background_task('update')
   print(task.get_state())
   while True:
@@ -273,6 +274,7 @@ def start_update():
     if task.get_state()['Progress'] != p:
         print(p)
         p = task.get_state()['Progress']
-    print('Complete')      
-  return task
+    print('Complete')
+  te = datetime.now()  
+  return [ts,te]
                                
