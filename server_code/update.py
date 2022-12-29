@@ -150,7 +150,7 @@ def update():
         anvil.server.task_state['Progress'] = t['Teamname']
     response = nocrash()
 
-    return response
+    return 
 
 def nocrash():
     sg = SendGridAPIClient(get_my_secret('sendgrid'))
@@ -160,7 +160,7 @@ def nocrash():
     subject='Wongpool Crash Report',
     plain_text_content="Update Program Completed")
     response = sg.send(message)
-    return response
+    return 
   
 
   
@@ -265,16 +265,14 @@ def fn(player):
 def start_update():
   ts = datetime.now()
   task = anvil.server.launch_background_task('update')
-  print(task.get_state())
-  while True:
-    if task.get_state() != {}:
-      break
-  p = task.get_state()['Progress']
-  while not task.is_completed:
-    if task.get_state()['Progress'] != p:
+  print(task.get_state().get('Progress')) 
+  p = task.get_state().get('Progress')
+
+  while not task.is_completed():
+    if task.get_state().get('Progress') != p:
         print(p)
         p = task.get_state()['Progress']
-    print('Complete')
+  print('Complete')
   te = datetime.now()  
   return [ts,te]
                                
