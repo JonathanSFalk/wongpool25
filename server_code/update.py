@@ -280,7 +280,7 @@ def results():
         "failed": {"status": 500, "body": "An error occurred whilst generating your dataset. Get Owen to have a look."},
         "killed": {"status": 500, "body": "The background task to generate your dataset has been killed. Get Owen to have a look."},
         "missing": {"status": 500,"body": "The background task to generate your dataset is AWOL. Get Owen to have a look"},
-        "completed": {"status": 200, "body": task.get_state().get("result", None)}
+        "completed": {"status": 200, "body": task.get_state().get("Progress", None)}
     }
     return anvil.server.HttpResponse(**responses[status])  
 
