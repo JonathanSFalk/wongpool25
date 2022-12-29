@@ -248,6 +248,17 @@ db_schema:
     - name: Media
       admin_ui: {width: 200}
       type: media
+  update:
+    title: Update
+    client: none
+    server: full
+    columns:
+    - name: Counter
+      admin_ui: {width: 200}
+      type: string
+    - name: Id
+      admin_ui: {width: 200}
+      type: string
 secrets:
   sendgrid:
     value: {? '' : N2IJqSUF41vVDcp41++6UAssKzqeciaXl/amBaoUUYXx+g7GnAQvRpwwQAxTyHHd3R+h7Vvp1YSRFMy0gGMJ71aGcpNWLUJGWPjt447MlkFQHSL3cP4/3LINscUGLetzEOpRGf7mPWOGviqyC/YPtPpAq72Szdq4eVk32YwTaMglaYCExlMSewda/jCwNoKNcM8dxcYUwUnn6V1BJDOE1nQ2+gg=}

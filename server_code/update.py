@@ -263,16 +263,18 @@ def fn(player):
 
 @anvil.server.callable
 def start_update():
-  ts = datetime.now()
   task = anvil.server.launch_background_task('update')
-  print(task.get_state().get('Progress')) 
-  p = task.get_state().get('Progress')
+  therow = app_tables.update.get(Counter='Only')
+  therow['Id'] = task.get_id()
+     
+@anvil.server.http_endpoint('/get_state')
+def state_query():
+# First, find the task
+  task_id = app_tables.update.get(Counter='Only')['Id'] 
+  task = anvil.server.get_background_task(task_id) 
+  if task.is_running():
+    return('Still running: ' + task.get_state().get('Progress'))
+  else:
+    return(task.get_termination_status()) 
 
-  while not task.is_completed():
-    if task.get_state().get('Progress') != p:
-        print(p)
-        p = task.get_state()['Progress']
-  print('Complete')
-  te = datetime.now()  
-  return [ts,te]
-                               
+  

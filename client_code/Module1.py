@@ -103,11 +103,7 @@ def signup_with_form():
 #        else:  
 #            app_tables.updates.add_row(Update='Nothing to Update',RunTime=timerun)
 #    return
-
-def update_routine():
-    task = anvil.server.call('start_update')
-      
-update_routine()    
+  
 
   
 #login_class=-1
