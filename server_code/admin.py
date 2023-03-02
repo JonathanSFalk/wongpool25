@@ -141,10 +141,10 @@ def _do_signup(email, name, password):
 
 @anvil.server.callable
 def fill_in_players():
-  tofill = app_tables.players.search(lookup=None)
+  tofill = app_tables.players.search(plahman=None)
   for j in tofill:
     print(j['fullname'])
-    rtn = anvil.server.call('get_data',j['fullname'])
+    rtn = anvil.server.call('get_data',j['lookup'])
     j['lookup'] = int(rtn[1])
     j['pbbref'] = rtn[2]
     j['plahman'] = rtn[0]
