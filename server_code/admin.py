@@ -144,4 +144,5 @@ def fill_in_players():
   tofill = app_tables.players.search(lookup=None)
   for j in tofill:
     print(j['fullname'])
+    x,y,z = anvil.server.call('get_data',j['fullname'])
   return
