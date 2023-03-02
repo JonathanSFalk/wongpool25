@@ -145,7 +145,7 @@ def fill_in_players():
   for j in tofill:
     print(j['fullname'])
     rtn = anvil.server.call('get_data',j['fullname'])
-    j['lookup'] = rtn[1]
+    j['lookup'] = int(rtn[1])
     j['pbbref'] = rtn[2]
-    j['lahman'] = rtn[0]
+    j['plahman'] = rtn[0]
   return
