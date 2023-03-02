@@ -138,3 +138,10 @@ def _do_signup(email, name, password):
   # No error = success
   anvil.users.force_login(user)
   return None
+
+@anvil.server.callable
+def fill_in_players():
+  tofill = app_tables.players.search(lookup=None)
+  for j in tofill:
+    print(j['fullname'])
+  return
