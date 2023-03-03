@@ -1,5 +1,6 @@
 from ._anvil_designer import ShowTeamsTemplate
 from anvil import *
+import anvil.facebook.auth
 import stripe.checkout
 import anvil.media
 import anvil.server

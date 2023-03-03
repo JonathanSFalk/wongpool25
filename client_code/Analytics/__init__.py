@@ -1,5 +1,6 @@
 from ._anvil_designer import AnalyticsTemplate
 from anvil import *
+import anvil.facebook.auth
 import plotly.graph_objects as go
 import anvil.server
 import stripe.checkout

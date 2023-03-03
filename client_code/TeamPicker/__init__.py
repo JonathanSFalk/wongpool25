@@ -1,5 +1,6 @@
 from ._anvil_designer import TeamPickerTemplate
 from anvil import *
+import anvil.facebook.auth
 import stripe.checkout
 import anvil.server
 import anvil.google.auth, anvil.google.drive

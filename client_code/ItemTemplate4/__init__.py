@@ -1,5 +1,6 @@
 from ._anvil_designer import ItemTemplate4Template
 from anvil import *
+import anvil.facebook.auth
 import anvil.server
 import stripe.checkout
 import anvil.google.auth, anvil.google.drive

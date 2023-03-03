@@ -1,3 +1,4 @@
+import anvil.facebook.auth
 import anvil.secrets
 import anvil.stripe
 import anvil.google.auth, anvil.google.drive, anvil.google.mail

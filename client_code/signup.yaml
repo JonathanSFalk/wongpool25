@@ -4,7 +4,7 @@ container:
 components:
 - type: Label
   properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: Owner Name (Not team name... that comes later.  this is thesame name for every team you own),
+    text: Owner Name (Not team name... that comes later.  this is the same name for every team you own),
     font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
     italic: false, background: '', bold: false, underline: false, icon: ''}
   name: label_1

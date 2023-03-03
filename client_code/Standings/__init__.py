@@ -1,5 +1,6 @@
 from ._anvil_designer import StandingsTemplate
 from anvil import *
+import anvil.facebook.auth
 import stripe.checkout
 import anvil.google.auth, anvil.google.drive
 from anvil.google.drive import app_files

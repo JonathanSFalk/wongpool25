@@ -6,6 +6,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from anvil import *
+import anvil.facebook.auth
 import stripe.checkout
 from . import data_access
 from .signup import signup
