@@ -144,7 +144,7 @@ def fill_in_players():
   tofill = app_tables.players.search(plahman=None)
   for j in tofill:
     print(j['fullname'])
-    rtn = anvil.server.call('get_data',j['lookup'])
+    rtn = anvil.server.call('get_data',str(j['lookup']))
     j['lookup'] = int(rtn[1])
     j['pbbref'] = rtn[2]
     j['plahman'] = rtn[0]
