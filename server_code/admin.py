@@ -148,4 +148,7 @@ def fill_in_players():
     j['lookup'] = int(rtn[1])
     j['pbbref'] = rtn[2]
     j['plahman'] = rtn[0]
+  zeroout = app_tables.players.search()
+  for j in zeroout:
+    j['teams'] = None
   return
