@@ -37,14 +37,6 @@ def get_hothomers():
   __hothomers = anvil.server.call('hothomers')
   return __hothomers
 
-def the_user():
-  global __user  
-  if __user:
-    # print("Using cached user: {}".format(__user['email']))
-    return __user
-  __user = anvil.users.get_user()
-  return __user
-
 def get_lupdate():
   global __lupdate
   if __lupdate:

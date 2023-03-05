@@ -116,13 +116,13 @@ while login_class==-1 or login_class==0:
         alert('There is nothing to see as a guest before the season starts.\r\nTo pick a team, create an ID and log in as a user',large=True)
     elif login_class==1:
       signup_with_form()
-      user = data_access.the_user()
+      user = anvil.users.get_user(allow_remembered=True)
       if user is None:
         user = 'Guest'
         login_class = 0
     else:
       anvil.users.login_with_form(allow_cancel=True,allow_remembered=True)
-      user = data_access.the_user()
+      user = anvil.users.get_user(allow_remembered=True)
       if user is None: 
          user='Guest'
          login_class = 0 

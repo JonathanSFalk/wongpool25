@@ -19,7 +19,7 @@ class TeamPicker(TeamPickerTemplate):
     self.ws = anvil.js.window.innerWidth
     self.user = data_access.the_user()
     self.label_3.text = self.user['owner']
-    self.cap = 227
+    self.cap = 208
     self.pset = set()
     # Any code you write here will run when the form opens.
     players = anvil.server.call('player_list')
