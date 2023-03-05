@@ -107,8 +107,8 @@ components:
   - type: Label
     properties: {role: subheading, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Check a box to select that player.  Unchecking unselects.  Any
-        legal team (8 players, Total 227 or less) can be saved', font_size: null,
+        legal team (8 players, Total 208 or less) can be saved', font_size: null,
       font: '', spacing_above: small, icon_align: left_edge, spacing_below: small,
       italic: false, background: '', bold: false, underline: false, icon: 'fa:check-square'}
     name: label_2
-    layout_properties: {row: FTSVYR, width_xs: 12, col_xs: 0, width: 494}
+    layout_properties: {row: FTSVYR, width_xs: 12, col_xs: 0, width: 994.16}

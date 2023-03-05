@@ -109,7 +109,7 @@ Thanks!
     return True
   
 @anvil.server.callable
-def _do_signup(email, name, password):
+def _do_signup(email, name, password):   
   if name is None or name.strip() == "":
     return "Must supply a name"
   if app_tables.users.get(owner=name) is not None:

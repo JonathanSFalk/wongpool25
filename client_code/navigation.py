@@ -88,7 +88,7 @@ def set_title(text):
 
     
 def require_account():
-    user = data_access.the_user()
+    user = anvil.users.get_user()
     if user:
       return user
     
