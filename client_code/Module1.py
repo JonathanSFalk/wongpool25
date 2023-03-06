@@ -110,7 +110,7 @@ def signup_with_form():
   
 login_class=-1
 while login_class==-1 or login_class==0:
-    login_class = alert('Welcome to Wongpool 2022\r\n Sign Up, Log in or continue as guest',large=True,
+    login_class = alert('Welcome to Wongpool 2023\r\n Sign Up, Log in or continue as guest',large=True,
                     buttons=[('Guest',0),('Signup',1),("Login",2)])
     if login_class==0:
         alert('There is nothing to see as a guest before the season starts.\r\nTo pick a team, create an ID and log in as a user',large=True)
