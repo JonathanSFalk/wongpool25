@@ -17,7 +17,7 @@ class TeamPicker(TeamPickerTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.ws = anvil.js.window.innerWidth
-    self.navbar_links.width = 3*self.ws/4
+    self.navbar_links.width = self.ws
     self.user = anvil.users.get_user(allow_remembered=True)
     self.label_3.text = self.user['owner']
     self.cap = 208
