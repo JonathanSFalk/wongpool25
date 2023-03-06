@@ -59,7 +59,7 @@ class TeamPicker(TeamPickerTemplate):
         numplayers += 1
       self.grid_panel_2.add_component(
         TextBox(placeholder='Empty',text=thelist[d][0]),
-        row=row,col_xs=col*3,width_xs=3)
+        row=row,col_xs=col*3,width_xs=3,font_size=10)
     self.label_4.text= str(numplayers) + ' Players Selected'
     self.label_5.text ='HR Remaining: ' + str(self.cap-ptag)
     self.button_1.enabled = numplayers == 8 and ptag<=self.cap
