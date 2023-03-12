@@ -110,9 +110,8 @@ Thanks!
   
 @anvil.server.callable
 def _do_signup(email, name, password):   
-  if name is None or name.strip() == "":
+  if (name is None) or (name.strip() == ""):
     return "Must supply a name"
-  name = email 
   if app_tables.users.get(owner=name) is not None:
     return "Name is already being used.  Choose another."
   
