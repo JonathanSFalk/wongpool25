@@ -107,26 +107,25 @@ def signup_with_form():
 #    return
   
 
-  
-login_class=-1
-while login_class==-1 or login_class==0:
-    login_class = alert('Welcome to Wongpool 2023\r\n Sign Up, Log in or continue as guest',large=True,
-                    buttons=[('Guest',0),('Signup',1),("Login",2)])
-    if login_class==0:
-        alert('There is nothing to see as a guest before the season starts.\r\nTo pick a team, create an ID and log in as a user',large=True)
-    elif login_class==1:
-      signup_with_form()
-      user = anvil.users.get_user(allow_remembered=True)
-      if user is None:
-        user = 'Guest'
-        login_class = 0
-    else:
-      anvil.users.login_with_form(allow_cancel=True,allow_remembered=True)
-      user = anvil.users.get_user(allow_remembered=True)
-      if user is None: 
-         user='Guest'
-         login_class = 0 
-  
+#login_class=-1
+#while login_class==-1 or login_class==0:
+#    login_class = alert('Welcome to Wongpool 2023\r\n Sign Up, Log in or continue as guest',large=True,
+#                    buttons=[('Guest',0),('Signup',1),("Login",2)])
+#    if login_class==0:
+#        alert('There is nothing to see as a guest before the season starts.\r\nTo pick a team, create an ID and log in as a user',large=True)
+#    elif login_class==1:
+#      signup_with_form()
+#      user = anvil.users.get_user(allow_remembered=True)
+#      if user is None:
+#        user = 'Guest'
+#        login_class = 0
+##    else:
+#      anvil.users.login_with_form(allow_cancel=True,allow_remembered=True)
+#      user = anvil.users.get_user(allow_remembered=True)
+#      if user is None: 
+#         user='Guest'
+#         login_class = 0 
+#  
  
 #update_text = update()
 #z=anvil.server.call('check')
@@ -139,8 +138,8 @@ x = anvil.server.call('fill_in_players')
 #signup_with_form()
 #if user['email'] == 'me':
 #  open_form('Form1')
-open_form('TeamPicker')    
-#open_form('SplashScreen')
+# open_form('TeamPicker')    
+open_form('SplashScreen')
 #pdf = anvil.server.call('pdf2')
 #anvil.media.download(pdf)
 
