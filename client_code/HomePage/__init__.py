@@ -95,8 +95,8 @@ class HomePage(HomePageTemplate):
     self.card_content.clear()
     self.card_content.add_component(cmpt)
     
-    if data_access.the_user():
-      self.set_account_state(data_access.the_user())
+#    if data_access.the_user():
+    self.set_account_state(None)
 
   def set_account_state(self, user):
 #    self.link_account.visible = user is not None

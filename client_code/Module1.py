@@ -134,13 +134,13 @@ def signup_with_form():
 #  x = anvil.server.call('check_a_team',t)
 #open_form('Analytics')
 x = anvil.server.call('fill_in_players')
-#open_form('HomePage')
+open_form('HomePage')
 #signup_with_form()
 #if user['email'] == 'me':
 #  open_form('Form1')
 # open_form('TeamPicker')
-anvil.server.call('start_update')
-open_form('SplashScreen')
+#anvil.server.call('start_update')
+#open_form('SplashScreen')
 #pdf = anvil.server.call('pdf2')
 #anvil.media.download(pdf)
 
