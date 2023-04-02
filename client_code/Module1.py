@@ -140,7 +140,7 @@ x = anvil.server.call('fill_in_players')
 #if user['email'] == 'me':
 #  open_form('Form1')
 # open_form('TeamPicker')    
-#open_form('SplashScreen')
+open_form('SplashScreen')
 #pdf = anvil.server.call('pdf2')
 #anvil.media.download(pdf)
 
