@@ -8,11 +8,11 @@ components:
 - type: form:SplashScreen
   properties: {}
   name: custom_2
-  layout_properties: {grid_position: 'TNGPCB,DTFCFS'}
+  layout_properties: {grid_position: 'FVRYDP,TSUXLA'}
 - type: ColumnPanel
   properties: {col_widths: '{}'}
   name: column_panel_1
-  layout_properties: {grid_position: 'JRZJIC,FNIUHL'}
+  layout_properties: {grid_position: 'XLMFHL,EYMXAM'}
   components:
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
@@ -20,40 +20,40 @@ components:
       icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
       underline: false, icon: ''}
     name: label_1
-    layout_properties: {grid_position: 'COANNQ,XCLANA'}
+    layout_properties: {grid_position: 'YDJQOW,YNLRKV'}
   - type: RepeatingPanel
     properties: {item_template: ItemTemplate4}
     name: winpanel
     layout_properties: {grid_position: 'LKAMUI,YSMMWJ'}
-- type: ColumnPanel
-  properties: {col_widths: '{}'}
-  name: column_panel_2
-  layout_properties: {grid_position: 'JRZJIC,PJOAPT'}
-  components:
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Current Month Leaders, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    name: label_2
-    layout_properties: {grid_position: 'BPBTPB,BVRVJL'}
-  - type: RepeatingPanel
-    properties: {item_template: ItemTemplate5}
-    name: monthpanel
-    layout_properties: {grid_position: 'PKBENL,EMIPPG'}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: Current Month Leaders, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: label_2
+  layout_properties: {grid_position: 'XLMFHL,DFAMIQ LBSQDD,JPNHTE'}
+- type: RepeatingPanel
+  properties: {item_template: ItemTemplate5}
+  name: monthpanel
+  layout_properties: {grid_position: 'XLMFHL,DFAMIQ ZRUMDP,ZKUDLB'}
 - type: ColumnPanel
   properties: {col_widths: '{}'}
   name: column_panel_3
-  layout_properties: {grid_position: 'JRZJIC,HEVOKX'}
+  layout_properties: {grid_position: 'XLMFHL,ZYDJDK FBPTCU,YKDJYI'}
   components:
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Overall Leaders, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    name: label_3
-    layout_properties: {grid_position: 'NDEVWG,FPYVZJ'}
-  - type: RepeatingPanel
-    properties: {item_template: ItemTemplate6}
-    name: totpanel
-    layout_properties: {grid_position: 'XOZCEV,VREGWK'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_2
+    layout_properties: {grid_position: 'LQANSJ,QJJCLZ'}
+    components:
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Overall Leaders, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_3
+      layout_properties: {grid_position: 'URHNMG,WDRVYU'}
+- type: RepeatingPanel
+  properties: {item_template: ItemTemplate6}
+  name: totpanel
+  layout_properties: {grid_position: 'XLMFHL,ZYDJDK OYIAOT,SSEKAG'}
