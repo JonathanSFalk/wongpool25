@@ -135,8 +135,8 @@ def update():
     sg = SendGridAPIClient(get_my_secret('sendgrid'))
     message = Mail(
     from_email='webmaster@wongpool.com',
-    to_emails=['jonathansfalk@gmail.com'],  
-#    to_emails=['jonathansfalk@gmail.com','drwfood@hotmail.com'],
+#    to_emails=['jonathansfalk@gmail.com'],  
+    to_emails=['jonathansfalk@gmail.com','drwfood@hotmail.com'],
     subject='Wongpool Update Report',
     plain_text_content=emailbody)
 
