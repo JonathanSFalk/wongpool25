@@ -1,5 +1,5 @@
 scheduled_tasks:
-- task_name: start_update
+- task_name: update
   time_spec:
     n: 1
     every: day
