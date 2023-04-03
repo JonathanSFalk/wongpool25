@@ -1,4 +1,10 @@
-scheduled_tasks: []
+scheduled_tasks:
+- task_name: start_update
+  time_spec:
+    n: 1
+    every: day
+    at: {minute: 0, hour: 10}
+  job_id: PWVJQAZL
 dependencies: []
 services:
 - source: /runtime/services/tables.yml
