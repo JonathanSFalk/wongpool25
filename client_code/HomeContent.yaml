@@ -25,35 +25,35 @@ components:
     properties: {item_template: ItemTemplate4}
     name: winpanel
     layout_properties: {grid_position: 'LKAMUI,YSMMWJ'}
-- type: Label
-  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: Current Month Leaders, font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-    underline: false, icon: ''}
-  name: label_2
-  layout_properties: {grid_position: 'XLMFHL,DFAMIQ LBSQDD,JPNHTE'}
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: column_panel_2
+  layout_properties: {grid_position: 'XLMFHL,DFAMIQ QQRWSN,ARTWYT'}
+  components:
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Current Month Leaders, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'BTVSGH,SUWPJF'}
 - type: RepeatingPanel
   properties: {item_template: ItemTemplate5}
   name: monthpanel
-  layout_properties: {grid_position: 'XLMFHL,DFAMIQ ZRUMDP,ZKUDLB'}
+  layout_properties: {grid_position: 'XLMFHL,DFAMIQ CABUAA,IMTCSZ'}
 - type: ColumnPanel
   properties: {col_widths: '{}'}
   name: column_panel_3
   layout_properties: {grid_position: 'XLMFHL,ZYDJDK FBPTCU,YKDJYI'}
   components:
-  - type: ColumnPanel
-    properties: {col_widths: '{}'}
-    name: column_panel_2
-    layout_properties: {grid_position: 'LQANSJ,QJJCLZ'}
-    components:
-    - type: Label
-      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-        visible: true, text: Overall Leaders, font_size: null, font: '', spacing_above: small,
-        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-        underline: false, icon: ''}
-      name: label_3
-      layout_properties: {grid_position: 'URHNMG,WDRVYU'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Overall Leaders, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_3
+    layout_properties: {grid_position: 'QUDOLE,BYXQBQ'}
 - type: RepeatingPanel
   properties: {item_template: ItemTemplate6}
   name: totpanel
-  layout_properties: {grid_position: 'XLMFHL,ZYDJDK OYIAOT,SSEKAG'}
+  layout_properties: {grid_position: 'XLMFHL,ZYDJDK FTTLDJ,CQQAXK'}
