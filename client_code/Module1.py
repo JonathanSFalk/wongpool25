@@ -133,7 +133,7 @@ def signup_with_form():
 #for t in tlist:
 #  x = anvil.server.call('check_a_team',t)
 #open_form('Analytics')
-x = anvil.server.call('fill_in_players')
+#x = anvil.server.call('fill_in_players')
 open_form('HomePage')
 #signup_with_form()
 #if user['email'] == 'me':

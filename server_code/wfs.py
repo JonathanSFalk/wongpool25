@@ -227,14 +227,19 @@ def picks(team):
 def p2team():
     players = app_tables.players.search()
     retmat = []
+    #Code fills the teams; to be used after all the teams are in
+    #for p in players:
+      #pnum = p['pnum']
+      #the_teams = [r['Teamname'] for r in 
+           #app_tables.teams.search(q.any_of(P1=pnum,P2=pnum,
+      #P3=pnum,P4=pnum,P5=pnum,P6=pnum,P7=pnum,P8=pnum))]
+      #retmat.append([p['fullname'],len(the_teams),the_teams])  
+      # This line populates the 'teams' column.  To be used only before the season starts
+      #p['teams'] = the_teams
     for p in players:
       pnum = p['pnum']
-      the_teams = [r['Teamname'] for r in 
-           app_tables.teams.search(q.any_of(P1=pnum,P2=pnum,
-      P3=pnum,P4=pnum,P5=pnum,P6=pnum,P7=pnum,P8=pnum))]
-      retmat.append([p['fullname'],len(the_teams),the_teams])  
-      # This line populates the 'teams' column.  To be used only before the season starts
-      # p['teams'] = the_teams
+      retmat.append([p['fullname'],len(p['teams']),p['teams']])
+  
     retmat.sort(key=lambda x:-x[1])
     return retmat    
 
