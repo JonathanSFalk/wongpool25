@@ -235,6 +235,7 @@ def check(p):
     c['Total'] = sum(h[0:6])  
       
 @anvil.server.callable
+@anvil.tables.in_transaction
 def check_a_team(t):
 #    print(t['Teamname'])
     mdict = {4:'April',5:'May',6:'June',7:'July',8:'August',9:'September','Total':'Total'}
