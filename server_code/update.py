@@ -13,6 +13,7 @@ import anvil.http
 from . import wfs
 import requests
 import json
+import time
 from datetime import datetime, timedelta
 import pytz
 from sendgrid import SendGridAPIClient
@@ -69,7 +70,11 @@ def get_all_homers(date):
         dh = games['doubleHeader']
         if games['gameType']=='R':
             thegameurl = 'http://statsapi.mlb.com/api/v1/game/{}/boxscore'.format(games['gamePk'])
-            thegame = anvil.http.request(thegameurl,json=True)
+            try:
+                thegame = anvil.http.request(thegameurl,json=True)
+            except:
+                time.sleep(1)
+                thegame = anvil.http.request(thegameurl,json=True)
             for l in lookup:
                 if 'ID' + str(l) in thegame['teams']['home']['players']:
                     homers = thegame['teams']['home']['players']['ID' + str(l)]['stats']['batting'].get('homeRuns',0)
