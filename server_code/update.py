@@ -71,7 +71,7 @@ def get_all_homers(date):
             thegameurl = 'http://statsapi.mlb.com/api/v1/game/{}/boxscore'.format(games['gamePk'])
             thegame = anvil.http.request(thegameurl) 
             try:
-                thegame = json.dumps(thegame)
+                thegame = json.dumps(thegame.content)
             except:
                 print(thegame.text)
                 thegame = anvil.http.request(thegameurl,json=True)
