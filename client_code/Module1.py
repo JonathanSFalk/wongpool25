@@ -15,6 +15,7 @@ import datetime
 
 print(anvil.app.environment.name)
 ###### AFTER END OF SEASON UPDATE WFS LINE 104
+##### At beginning of season remove return from update module
 
 def get_all_homers(date):
     result = anvil.server.call('player_list')

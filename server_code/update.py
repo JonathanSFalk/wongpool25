@@ -89,6 +89,8 @@ def get_all_homers(date):
 
 @anvil.server.background_task
 def update():
+  # Comment out this line when the season begins again
+    return
     anvil.server.task_state['Progress'] = 'Updating'
     timerun = datetime.now()
     edt_timerun = pytz.timezone("UTC").localize(timerun).astimezone(pytz.timezone('America/New_York'))
