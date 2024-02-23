@@ -6,12 +6,11 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from anvil import *
-import anvil.facebook.auth
-import stripe.checkout
+from anvil import open_form
 from . import data_access
-from .signup import signup
 import json
 import datetime
+import custom_signup.login_flow
 
 print(anvil.app.environment.name)
 ###### AFTER END OF SEASON UPDATE WFS LINE 104
@@ -48,33 +47,11 @@ def get_all_homers(date):
                         retn.append([ldict[l][0],date,gn,home,homers,dh])
     return retn
 
-def signup_with_form():
-  d = signup()
+custom_signup.login_flow.do_email_confirm_or_reset()
+# Open Form1
+open_form('signup')
 
-  while True:
-    if not alert(d, title="Sign Up", buttons=[("Sign Up", True, 'primary'), ("Cancel", False)]):
-      return
-    
-    if d.password_box.text != d.password_repeat_box.text:
-      d.signup_err_lbl.text = 'Passwords do not match. Try again.'
-      d.signup_err_lbl.visible = True
-      continue
-    
-    err = anvil.server.call('_do_signup', d.email_box.text, d.name_box.text, d.password_box.text)
-    if err is not None:
-      d.signup_err_lbl.text = err
-      d.signup_err_lbl.visible = True
-    else:
-#      alert(f"We have sent a confirmation email to {d.email_box.text}.\n\nCheck your email, and click on the link.")
-      return
-
-
-z = alert(signup())
-
-
-
-user = anvil.users.login_with_form()
- 
+stop 
 #update_text = update()
 #z=anvil.server.call('check')
 #tlist = anvil.server.call('team_list')
@@ -83,7 +60,7 @@ user = anvil.users.login_with_form()
 #open_form('Analytics')
 #x = anvil.server.call('fill_in_players')
 #open_form('HomePage')
-signup_with_form()
+
 if user['email'] == 'me':
   open_form('Form1')
 open_form('TeamPicker')

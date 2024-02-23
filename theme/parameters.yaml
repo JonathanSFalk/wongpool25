@@ -30,6 +30,8 @@ roles:
 - name: selected
   components: [Link]
 - {name: thin_row}
+- name: primary_color
+  components: [Button]
 color_scheme:
   preset_groups:
   - name: Primary Colour
