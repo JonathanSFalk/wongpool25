@@ -20,13 +20,6 @@ class signup(signupTemplate):
      """Focus on the email box."""
      self.email_box.focus()
 
-  def focus_password(self, **kws):
-    """Focus on the password box."""
-    self.password_box.focus()
-
-  def focus_password_repeat(self, **kws):
-    """Focus on the password repeat box."""
-    self.password_repeat_box.focus()
 
   def close_alert(self, **kws):
     """Close any alert we might be in with True value."""

@@ -67,59 +67,13 @@ def signup_with_form():
     else:
 #      alert(f"We have sent a confirmation email to {d.email_box.text}.\n\nCheck your email, and click on the link.")
       return
-  
 
 
-#def update():
-#    timerun = datetime.datetime.now()
-#    rundays = 1
-#    daterange=[]
-#    engine=dbconn.engine()
-#    for i in range(1,rundays+1):
-#    	daterange.append((timerun + datetime.timedelta(days=-i)).strftime("%m/%d/%Y"))
- #   hrlist=[]
- #   daterange = ['2020-09-15']
-  
-#    for d in daterange:
-#    	h = get_all_homers(d)
-#    	hrlist.extend(h)
-##       plahman = hr[0]
-#        print(hr)
-#        hometeam = app_tables.mlbteams.get(teamid=hr[3])['teamcode']
-#        gid = hometeam + hr[1].replace('-','')
-#        date = hr[1]
-#            # Second game of doubleheader
-#        if hr[2]==2:
-#            gid = gid + '2'
-#            # first game of doubleheader
-#        elif hr[2]==1 and (hr[5]=="Y" or hr[5]=="S"):
-#            gid = gid + '1'
-#            #single game
-#        else:
-#            gid = gid + '0'
-#        homers = hr[4]
-#       update_dict={'date':date,'homers':homers,'plahman':plahman,'gameid':gid,'last_updated':timerun}
-#        emailbody = anvil.server.call('write_to_homers',update_dict)
-#        if emailbody !='':
-#            del update_dict['last_updated']
-#            app_tables.updatwhile notes.add_row(Update=update_dict,RunTime=timerun)
-#        else:  
-#            app_tables.updates.add_row(Update='Nothing to Update',RunTime=timerun)
-#    return
-  
+z = alert(signup())
 
-login_class=-1
-while login_class==-1 or login_class==0:
-    login_class = alert('Welcome to Wongpool 2023\r\n Sign Up, Log in or continue as guest',large=True,
-                    buttons=[('Guest',0),('Signup',1),("Login",2)])
-    if login_class==0:
-        alert('There is nothing to see as a guest before the season starts.\r\nTo pick a team, create an ID and log in as a user',large=True)
-    else:
-      user = anvil.users.login_with_email()
-      login_class=1
-      if user is None:
-        user = 'Guest'
-        login_class = 0
+
+
+user = anvil.users.login_with_form()
  
 #update_text = update()
 #z=anvil.server.call('check')
