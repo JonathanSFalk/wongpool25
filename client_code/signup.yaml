@@ -19,3 +19,10 @@ components:
       10 minutes. '}
   type: Label
   layout_properties: {grid_position: 'NJCBBC,PANDXL'}
+- name: login_button
+  properties: {text: Log In, role: null, background: primary_colot}
+  type: Button
+  layout_properties: {grid_position: 'EWGTWP,RFBJQX'}
+  data_bindings:
+  - {property: role, code: '', writeback: false}
+  event_bindings: {click: login_button_click}

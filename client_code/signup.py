@@ -8,6 +8,7 @@ from anvil.google.drive import app_files
 import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
+import custom_signup.login_flow
 from anvil.tables import app_tables
 
 class signup(signupTemplate):
@@ -24,3 +25,7 @@ class signup(signupTemplate):
   def close_alert(self, **kws):
     """Close any alert we might be in with True value."""
     self.raise_event('x-close-alert', value=True)
+
+  def login_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    custom_signup.login_flow.login_with_form()
