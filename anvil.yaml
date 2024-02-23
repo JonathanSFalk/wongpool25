@@ -5,7 +5,11 @@ scheduled_tasks:
     every: day
     at: {minute: 0, hour: 10}
   job_id: PWVJQAZL
-dependencies: []
+dependencies:
+- dep_id: dep_rrwzbqc70xzhh
+  version: {dev: false}
+  resolution_hints: {app_id: EKREBQWOD4JB5V7Q, name: Clone of Custom sign-up flow,
+    package_name: custom_signup}
 services:
 - source: /runtime/services/tables.yml
   client_config: {enable_v2: true}
