@@ -1,0 +1,19 @@
+container: {type: ColumnPanel}
+components:
+- name: login_button
+  properties: {text: Log In, background: primary-color, role: primary-color}
+  type: Button
+  layout_properties: {grid_position: 'NXHUZJ,OXXCAU'}
+  event_bindings: {click: login_button_click}
+- name: login_status
+  properties: {}
+  type: Label
+  layout_properties: {grid_position: 'SLRWHZ,BKWYXY'}
+- name: signup_button
+  properties: {text: 'Sign Up
+
+      ', role: primary-color}
+  type: Button
+  layout_properties: {grid_position: 'QVYLWS,NAPRBZ'}
+  event_bindings: {click: signup_button_click}
+is_package: true
