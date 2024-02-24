@@ -35,6 +35,7 @@ class signup(signupTemplate):
 
   def signup_button_click(self, **event_args):
      custom_signup.login_flow.signup_with_form()
+     print("Huh?") 
      self.update_login_status()
     
     
