@@ -46,12 +46,15 @@ def get_all_homers(date):
                         home = thegame['teams']['home']['team']['id']
                         retn.append([ldict[l][0],date,gn,home,homers,dh])
     return retn
-
+open_form('SplashScreen')
 custom_signup.login_flow.do_email_confirm_or_reset()
 # Open Form1
 open_form('signup')
-
-stop 
+user = anvil.users.get_user()
+if user is not None:
+  open_form('TeamPicker')
+else:
+  open_form('SplashScreen')
 #update_text = update()
 #z=anvil.server.call('check')
 #tlist = anvil.server.call('team_list')
@@ -61,11 +64,9 @@ stop
 #x = anvil.server.call('fill_in_players')
 #open_form('HomePage')
 
-if user['email'] == 'me':
-  open_form('Form1')
-open_form('TeamPicker')
+#open_form('TeamPicker')
 #anvil.server.call('start_update')
-#open_form('SplashScreen')
+
 #pdf = anvil.server.call('pdf2')
 #anvil.media.download(pdf)
 

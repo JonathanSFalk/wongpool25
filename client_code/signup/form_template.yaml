@@ -1,14 +1,25 @@
 container: {type: ColumnPanel}
 components:
-- name: login_button
-  properties: {text: Log In, background: primary-color, role: primary-color}
-  type: Button
-  layout_properties: {grid_position: 'NXHUZJ,OXXCAU'}
-  event_bindings: {click: login_button_click}
+- name: card_1
+  properties: {role: card}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'JOMXLN,PZVRMA'}
+  components:
+  - name: headline_1
+    properties: {role: headline, text: 'Welcome to the 2024 Danny Wong Pool.  Before
+        the season starts, you can use this site to inout as many teams as you like.  Only
+        teams you pay for, however, will be entered when the pool begins on March
+        25th.  All email addresses and names have been erased, so if this is your
+        first time this year, click the SIGN UP button.  You will get an email and
+        a link to be registered.  Once you are registered on some device, you should
+        get logged in automatically.  If you don''t, hit the LOG IN button. Write
+        webmaster#wongpool.com with any questions.'}
+    type: Label
+    layout_properties: {grid_position: 'AYOKDQ,HKTVBA'}
 - name: login_status
-  properties: {}
+  properties: {align: center}
   type: Label
-  layout_properties: {grid_position: 'SLRWHZ,BKWYXY'}
+  layout_properties: {grid_position: 'MDLJQW,ELGFJY'}
 - name: signup_button
   properties: {text: 'Sign Up
 
@@ -16,4 +27,9 @@ components:
   type: Button
   layout_properties: {grid_position: 'QVYLWS,NAPRBZ'}
   event_bindings: {click: signup_button_click}
+- name: login_button
+  properties: {text: Log In, background: primary-color, role: primary-color}
+  type: Button
+  layout_properties: {grid_position: 'VWUTZU,HNBGJZ'}
+  event_bindings: {click: login_button_click}
 is_package: true
