@@ -105,14 +105,14 @@ class TeamPicker(TeamPickerTemplate):
       tm = [*self.pset,]
       tm.sort(key=lambda x: -x[1])
       tm = [x[0] for x in tm]
-      anvil.server.call('save_team',self.user['owner'],t.text,tm)
+      anvil.server.call('save_team',self.user['email'],t.text,tm)
       n = Notification(f"<b>{t.text}</b> has been saved.")
       n.show()
     return
   
   def button_3_click(self, **event_args):
     """This method is called when the button is clicked"""
-    my_teams = anvil.server.call('my_teams',self.user['owner'])
+    my_teams = anvil.server.call('my_teams',self.user['email'])
     if len(my_teams)==0:
       alert("You haven't saved a team yet")
     else:
