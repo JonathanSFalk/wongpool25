@@ -49,7 +49,7 @@ class TeamColumn(TeamColumnTemplate):
             n.show()
             time.sleep(4)
       newname = anvil.server.call('update_team',teamname,0,t.text)
-      my_teams = anvil.server.call('my_teams',anvil.users.get_user()['owner'])
+      my_teams = anvil.server.call('my_teams',anvil.users.get_user()['email'])
       open_form('ShowTeams',my_teams)
 
 
@@ -62,7 +62,7 @@ class TeamColumn(TeamColumnTemplate):
     else:
       n=Notification('Delete Cancelled')
       n.show
-    my_teams = anvil.server.call('my_teams',anvil.users.get_user()['owner'])  
+    my_teams = anvil.server.call('my_teams',anvil.users.get_user()['email'])  
     open_form('ShowTeams',my_teams)
 
 

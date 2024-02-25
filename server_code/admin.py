@@ -20,7 +20,7 @@ def teamlist():
   rtn = []
   for t in z:
     print(t['Owner'])
-    e = app_tables.users.search(owner=t['Owner'])
+    e = app_tables.users.search(owner=t['email'])
     for em in e:
       print(em['email'])
       zz = em['email']    
@@ -76,7 +76,7 @@ def update_team(teamname,delete_switch,*newname):
 
 @anvil.server.callable
 def my_teams(owner):
-  return app_tables.teams.search(Owner=owner)
+  return app_tables.teams.search(email=owner)
 
 def hash_password(password, salt):
   """Hash the password using bcrypt in a way that is compatible with Python 2 and 3."""
@@ -112,7 +112,7 @@ Thanks!
 def _do_signup(email, name, password):   
   if (name is None) or (name.strip() == ""):
     return "Must supply a name"
-  if app_tables.users.get(owner=name) is not None:
+  if app_tables.users.get(email=name) is not None:
     return "Name is already being used.  Choose another."
   
   pwhash = hash_password(password, bcrypt.gensalt())
@@ -126,7 +126,7 @@ def _do_signup(email, name, password):
       
     user = app_tables.users.get(email=email)
     if user is None:
-      user = app_tables.users.add_row(email=email, enabled=True, owner=name, password_hash=pwhash)
+      user = app_tables.users.add_row(email=email, enabled=True, owner=email, password_hash=pwhash)
       return user
     
   user = add_user_if_missing()
