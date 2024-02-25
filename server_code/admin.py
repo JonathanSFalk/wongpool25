@@ -76,7 +76,7 @@ def update_team(teamname,delete_switch,*newname):
 
 @anvil.server.callable
 def my_teams(owner):
-  return app_tables.teams.search(email=owner)
+  return app_tables.teams.search(Owner=owner)
 
 def hash_password(password, salt):
   """Hash the password using bcrypt in a way that is compatible with Python 2 and 3."""
