@@ -98,10 +98,12 @@ def getresults():
     results = []
     months = ("April: ","May: ","June: ","July: ","Aug: ","Sept: ")
     last_month = int(dmax[5:7])
+    if last_month==3:
+      last_month=4
     if last_month==10:
       last_month=9
     # Comment out ofter last games  
-      last_month = 10  
+    #  last_month = 10  
     # Create monthly winners: results code 1
     for i in range(4,last_month):
         standings = monthstandings(i)
@@ -138,8 +140,9 @@ def monthstandings(month):
     mstandings = []
     teamsort = sorted([x['Teamname'] for x in app_tables.teams.search()])
     for t in app_tables.teams.search():
-#        print(month,t['Teamname'],t[mdict[month]])
+        print(month,t['Teamname'],t[mdict[month]])
         mstandings.append([t['Teamnum'],t['Teamname'],t[mdict[month]]])
+      
     return sorted(mstandings,key=lambda x: (-x[2] * 10000 + teamsort.index(x[1])))
 
 def top5(rowtype,standlist):
