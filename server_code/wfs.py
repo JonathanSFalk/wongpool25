@@ -207,15 +207,16 @@ def picks(team):
   tm = app_tables.teams.get(Teamname=team)
   for p in range(1,9):
     player = tm['P'+str(p)]
-    prow = app_tables.phmdat.get(pnum=player)
-    for j in range(7):
-      matrix[0][p-1] = prow['April']
-      matrix[1][p-1] = prow['May']
-      matrix[2][p-1] = prow['June']
-      matrix[3][p-1] = prow['July']
-      matrix[4][p-1] = prow['August']
-      matrix[5][p-1] = prow['September']
-      matrix[6][p-1] = prow['Total']            
+    print(player)
+    prow = app_tables.phmdat.get(pnum=player-1)
+    
+    matrix[0][p-1] = prow['April']
+    matrix[1][p-1] = prow['May']
+    matrix[2][p-1] = prow['June']
+    matrix[3][p-1] = prow['July']
+    matrix[4][p-1] = prow['August']
+    matrix[5][p-1] = prow['September']
+    matrix[6][p-1] = prow['Total']            
     retmat.append(dict(player=str(player) + '. ' + prow['fullname'],
                       April=prow['April'],May=prow['May'],June=prow['June'],July=prow['July'],
                       August=prow['August'],September=prow['September'],Total=prow['Total']))

@@ -153,3 +153,21 @@ def fill_in_players():
   for j in zeroout:
     j['teams'] = None
   return
+
+@anvil.server.callable
+def make_teams():
+  allteams = app_tables.teams.search()
+  for t in allteams:
+    for i in ['P1','P2','P3','P4','P5','P6','P7','P8']:
+      plr = t[i]
+#      print(t['Teamnum'],i,plr)
+      thatplayer = app_tables.players.get(pnum=plr)
+      if thatplayer['teams'] is None:
+        thatplayer['teams'] = [t['Teamnum']]
+#        print(thatplayer['teams'])
+      else:
+        z = thatplayer['teams']
+#        print('Before',thatplayer['teams'])
+        z.append(t['Teamnum'])
+        thatplayer['teams'] = z
+#        print('After',thatplayer['teams'])
