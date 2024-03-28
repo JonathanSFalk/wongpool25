@@ -140,7 +140,7 @@ def monthstandings(month):
     mstandings = []
     teamsort = sorted([x['Teamname'] for x in app_tables.teams.search()])
     for t in app_tables.teams.search():
-        print(month,t['Teamname'],t[mdict[month]])
+        #print(month,t['Teamname'],t[mdict[month]])
         mstandings.append([t['Teamnum'],t['Teamname'],t[mdict[month]]])
       
     return sorted(mstandings,key=lambda x: (-x[2] * 10000 + teamsort.index(x[1])))
