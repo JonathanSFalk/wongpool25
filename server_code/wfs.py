@@ -208,7 +208,7 @@ def picks(team):
   for p in range(1,9):
     player = tm['P'+str(p)]
     print(player)
-    prow = app_tables.phmdat.get(pnum=player-1)
+    prow = app_tables.phmdat.get(pnum=player)
     
     matrix[0][p-1] = prow['April']
     matrix[1][p-1] = prow['May']

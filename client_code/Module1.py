@@ -56,9 +56,9 @@ def get_all_homers(date):
 #open_form('TeamPicker')
 #update_text = update()
 #z=anvil.server.call('check')
-#tlist = anvil.server.call('team_list')
-#for t in tlist:
-#  x = anvil.server.call('check_a_team',t)
+tlist = anvil.server.call('team_list')
+for t in tlist:
+  x = anvil.server.call('check_a_team',t)
 #open_form('Analytics')
 #x = anvil.server.call('fill_in_players')
 #x=anvil.server.call('make_teams')
