@@ -35,6 +35,7 @@ class HomePage(HomePageTemplate):
     self.call_js('hideSidebarIfModal')
     navigation.go_homers()
 
+
     
   def link_home_click(self, **event_args):
     self.call_js('hideSidebarIfModal')
@@ -103,6 +104,11 @@ class HomePage(HomePageTemplate):
 #    self.link_logout.visible = user is not None
     self.link_login.visible = False
     self.link_register.visible = False
+
+  def prizes_click(self, **event_args):
+    self.call_js('hideSidebarIfModal')
+    navigation.go_prizes()
+
 
   
   
