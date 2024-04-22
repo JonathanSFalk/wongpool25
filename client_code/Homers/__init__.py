@@ -76,6 +76,10 @@ class Homers(HomersTemplate):
     self.repeating_panel_1.items = sorted(homerlist, key = lambda i: psort[i['player']])
     self.refresh_data_bindings()
 
+  def date_picker_1_change(self, **event_args):
+    """This method is called when the selected date changes"""
+    pass
+
  
 
 

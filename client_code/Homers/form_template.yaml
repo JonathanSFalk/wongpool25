@@ -27,14 +27,15 @@ components:
     name: label_5
     layout_properties: {grid_position: 'LEJMRV,NMOVMY'}
   - type: DatePicker
-    properties: {role: null, align: left, max_date: 10 03 2023, pick_time: false,
-      tooltip: '', placeholder: '', border: '', enabled: true, foreground: '', visible: true,
-      font_size: null, font: '', spacing_above: small, spacing_below: small, italic: false,
-      date: 03 30 2023, min_date: 03 30 2023, background: '', bold: false, underline: false,
+    properties: {role: null, align: left, max_date: 10 03 2024, pick_time: false,
+      tooltip: '', placeholder: 03 20 2024, border: '', enabled: true, foreground: '',
+      visible: true, font_size: null, font: '', spacing_above: small, spacing_below: small,
+      italic: false, min_date: 03 20 2024, background: '', bold: false, underline: false,
       format: '%m %d %Y'}
     name: date_picker_1
     layout_properties: {grid_position: 'LEJMRV,EIFZZL'}
     data_bindings: []
+    event_bindings: {change: date_picker_1_change}
 - type: Label
   properties: {}
   name: label_2
