@@ -19,8 +19,9 @@ class TeamPicker(TeamPickerTemplate):
     self.ws = anvil.js.window.innerWidth
     self.navbar_links.width = self.ws*.9
     self.user = anvil.users.get_user(allow_remembered=True)
-    self.label_3.text = self.user['owner']
-    self.cap = 208
+    self.label_3.text = self.user['email']
+    self.cap = 214
+    self.label_2.text = f"Check a box to select that player.  Unchecking unselects.  Any legal team (8 players, Total {self.cap} or less) can be saved"
     self.pset = set()
     # Any code you write here will run when the form opens.
     players = anvil.server.call('player_list')
@@ -105,14 +106,14 @@ class TeamPicker(TeamPickerTemplate):
       tm = [*self.pset,]
       tm.sort(key=lambda x: -x[1])
       tm = [x[0] for x in tm]
-      anvil.server.call('save_team',self.user['owner'],t.text,tm)
+      anvil.server.call('save_team',self.user['email'],t.text,tm)
       n = Notification(f"<b>{t.text}</b> has been saved.")
       n.show()
     return
   
   def button_3_click(self, **event_args):
     """This method is called when the button is clicked"""
-    my_teams = anvil.server.call('my_teams',self.user['owner'])
+    my_teams = anvil.server.call('my_teams',self.user['email'])
     if len(my_teams)==0:
       alert("You haven't saved a team yet")
     else:

@@ -15,7 +15,7 @@ from .Standings import Standings
 from .HomeContent import HomeContent
 from .WhosHot import WhosHot
 from .Analytics import Analytics
-
+from .Prizes import Prizes
 
 home_form = None
 
@@ -30,6 +30,12 @@ def go_homers():
   set_active_nav('homers')  
   form = get_form()
   form.load_component(Homers())
+
+def go_prizes():
+  set_title("Prizes")
+  set_active_nav('prizes')
+  form = get_form()
+  form.load_component(Prizes())
   
 def go_home():
   set_active_nav('home')

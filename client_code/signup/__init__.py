@@ -32,6 +32,7 @@ class signup(signupTemplate):
      self.login_status.text = "You are not logged in"
     else:
      self.login_status.text = f"You are logged in as {user['email']}"
+     open_form('TeamPicker') 
 
   def signup_button_click(self, **event_args):
      custom_signup.login_flow.signup_with_form()

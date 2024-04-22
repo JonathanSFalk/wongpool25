@@ -20,7 +20,7 @@ def teamlist():
   rtn = []
   for t in z:
     print(t['Owner'])
-    e = app_tables.users.search(owner=t['Owner'])
+    e = app_tables.users.search(owner=t['email'])
     for em in e:
       print(em['email'])
       zz = em['email']    
@@ -112,7 +112,7 @@ Thanks!
 def _do_signup(email, name, password):   
   if (name is None) or (name.strip() == ""):
     return "Must supply a name"
-  if app_tables.users.get(owner=name) is not None:
+  if app_tables.users.get(email=name) is not None:
     return "Name is already being used.  Choose another."
   
   pwhash = hash_password(password, bcrypt.gensalt())
@@ -126,7 +126,7 @@ def _do_signup(email, name, password):
       
     user = app_tables.users.get(email=email)
     if user is None:
-      user = app_tables.users.add_row(email=email, enabled=True, owner=name, password_hash=pwhash)
+      user = app_tables.users.add_row(email=email, enabled=True, owner=email, password_hash=pwhash)
       return user
     
   user = add_user_if_missing()
@@ -153,3 +153,21 @@ def fill_in_players():
   for j in zeroout:
     j['teams'] = None
   return
+
+@anvil.server.callable
+def make_teams():
+  allteams = app_tables.teams.search()
+  for t in allteams:
+    for i in ['P1','P2','P3','P4','P5','P6','P7','P8']:
+      plr = t[i]
+#      print(t['Teamnum'],i,plr)
+      thatplayer = app_tables.players.get(pnum=plr)
+      if thatplayer['teams'] is None:
+        thatplayer['teams'] = [t['Teamnum']]
+#        print(thatplayer['teams'])
+      else:
+        z = thatplayer['teams']
+#        print('Before',thatplayer['teams'])
+        z.append(t['Teamnum'])
+        thatplayer['teams'] = z
+#        print('After',thatplayer['teams'])
