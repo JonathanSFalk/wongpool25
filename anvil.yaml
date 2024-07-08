@@ -8,16 +8,13 @@ scheduled_tasks:
 dependencies:
 - dep_id: dep_rrwzbqc70xzhh
   version: {dev: false}
-  resolution_hints: {app_id: EKREBQWOD4JB5V7Q, name: Clone of Custom sign-up flow,
-    package_name: custom_signup}
+  resolution_hints: {app_id: EKREBQWOD4JB5V7Q, name: Clone of Custom sign-up flow, package_name: custom_signup}
 services:
 - source: /runtime/services/tables.yml
   client_config: {enable_v2: true}
   server_config: {}
 - source: /runtime/services/anvil/users.yml
-  client_config: {require_secure_passwords: false, use_token: false, use_email: true,
-    allow_remember_me: false, allow_signup: false, enable_automatically: true, confirm_email: true,
-    remember_me_days: 365, use_google: false, use_facebook: false}
+  client_config: {require_secure_passwords: false, use_token: false, use_email: true, allow_remember_me: false, allow_signup: false, enable_automatically: true, confirm_email: true, remember_me_days: 365, use_google: false, use_facebook: false}
   server_config: {user_table: users, email_from_address: webmaster@wongpool.com}
 - source: /runtime/services/anvil/email.yml
   client_config: {}

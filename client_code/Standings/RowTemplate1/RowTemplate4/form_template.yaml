@@ -1,8 +1,6 @@
 container:
   type: DataRowPanel
-  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', auto_display_data: true,
-    visible: true, font_size: null, font: '', spacing_above: none, spacing_below: none,
-    italic: false, background: '', bold: false, underline: false}
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', auto_display_data: true, visible: true, font_size: null, font: '', spacing_above: none, spacing_below: none, italic: false, background: '', bold: false, underline: false}
 components:
 - type: Label
   properties: {}
@@ -11,64 +9,43 @@ components:
   data_bindings:
   - {property: text, code: 'self.item[''player'']'}
 - type: Label
-  properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: false, underline: false,
-    icon: ''}
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
   name: label_2
   layout_properties: {column: ZTUPDC}
   data_bindings:
   - {property: text, code: 'self.item[''April'']'}
 - type: Label
-  properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: false, underline: false,
-    icon: ''}
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
   name: label_3
   layout_properties: {column: MRSLUD}
   data_bindings:
   - {property: text, code: 'self.item[''May'']'}
 - type: Label
-  properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: false, underline: false,
-    icon: ''}
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
   name: label_4
   layout_properties: {column: XCIRBF}
   data_bindings:
   - {property: text, code: 'self.item[''June'']'}
 - type: Label
-  properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: false, underline: false,
-    icon: ''}
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
   name: label_5
   layout_properties: {column: EJHXFE}
   data_bindings:
   - {property: text, code: 'self.item[''July'']'}
 - type: Label
-  properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: false, underline: false,
-    icon: ''}
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
   name: label_6
   layout_properties: {column: IDJEYF}
   data_bindings:
   - {property: text, code: 'self.item[''August'']'}
 - type: Label
-  properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: false, underline: false,
-    icon: ''}
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
   name: label_7
   layout_properties: {column: EJXIAK}
   data_bindings:
   - {property: text, code: 'self.item[''September'']'}
 - type: Label
-  properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: false, underline: false,
-    icon: ''}
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
   name: label_8
   layout_properties: {column: NBJKQD}
   data_bindings:

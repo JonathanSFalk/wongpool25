@@ -9,82 +9,49 @@ components:
   layout_properties: {grid_position: 'GZNMKE,IRGNYM'}
   components:
   - type: Button
-    properties: {role: raised, align: full, tooltip: '', border: '', enabled: true,
-      foreground: 'theme:White', visible: true, text: Rename, font_size: 12, font: '',
-      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: 'theme:Primary 700', bold: false, underline: false, icon: ''}
+    properties: {role: raised, align: full, tooltip: '', border: '', enabled: true, foreground: 'theme:White', visible: true, text: Rename, font_size: 12, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: 'theme:Primary 700', bold: false, underline: false, icon: ''}
     name: rename_btn
     layout_properties: {grid_position: 'UCKIHZ,EEFEZQ', full_width_row: true, row_background: 'theme:White'}
     event_bindings: {click: rename_btn_click}
   - type: Button
-    properties: {role: raised, align: full, tooltip: '', border: '', enabled: true,
-      foreground: 'theme:White', visible: true, text: Delete, font_size: 12, font: '',
-      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: 'theme:Primary 700', bold: false, underline: false, icon: ''}
+    properties: {role: raised, align: full, tooltip: '', border: '', enabled: true, foreground: 'theme:White', visible: true, text: Delete, font_size: 12, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: 'theme:Primary 700', bold: false, underline: false, icon: ''}
     name: delete_btn
     layout_properties: {grid_position: 'LIKYLD,XOEAXT', full_width_row: true, row_background: 'theme:White'}
     event_bindings: {click: delete_btn_click}
   - type: Label
-    properties: {role: subheading, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-      spacing_below: small, italic: false, background: 'theme:Primary 500', bold: true,
-      underline: true, icon: ''}
+    properties: {role: subheading, align: center, tooltip: '', border: '', foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: 'theme:Primary 500', bold: true, underline: true, icon: ''}
     name: name_lbl
     layout_properties: {}
   - type: Label
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-      spacing_below: small, italic: false, background: 'theme:Gray 600', bold: false,
-      underline: false, icon: ''}
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: 'theme:Gray 600', bold: false, underline: false, icon: ''}
     name: p1_lbl
     layout_properties: {}
   - type: Label
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:Black',
-      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-      spacing_below: small, italic: false, background: 'theme:Gray 300', bold: false,
-      underline: false, icon: ''}
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:Black', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: 'theme:Gray 300', bold: false, underline: false, icon: ''}
     name: p2_lbl
     layout_properties: {grid_position: 'GZNMKE,FQLXNA'}
   - type: Label
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-      spacing_below: small, italic: false, background: 'theme:Gray 600', bold: false,
-      underline: false, icon: ''}
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: 'theme:Gray 600', bold: false, underline: false, icon: ''}
     name: p3_lbl
     layout_properties: {}
   - type: Label
-    properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:Black',
-      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-      spacing_below: small, italic: false, background: 'theme:Gray 300', bold: false,
-      underline: false, icon: ''}
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:Black', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: 'theme:Gray 300', bold: false, underline: false, icon: ''}
     name: p4_lbl
     layout_properties: {}
 - type: Label
-  properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: 'theme:Gray 600', bold: false,
-    underline: false, icon: ''}
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: 'theme:Gray 600', bold: false, underline: false, icon: ''}
   name: p5_lbl
   layout_properties: {grid_position: 'VMXPMW,DBDYXJ'}
 - type: Label
-  properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:Black',
-    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: 'theme:Gray 300', bold: false,
-    underline: false, icon: ''}
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:Black', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: 'theme:Gray 300', bold: false, underline: false, icon: ''}
   name: p6_lbl
   layout_properties: {grid_position: 'FANBVZ,ZRCFWS'}
 - type: Label
-  properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: 'theme:Gray 600', bold: false,
-    underline: false, icon: ''}
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: 'theme:Gray 600', bold: false, underline: false, icon: ''}
   name: p7_lbl
   layout_properties: {grid_position: 'FYHHWL,EMWYZK'}
 - type: Label
-  properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:Black',
-    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: 'theme:Gray 300', bold: false,
-    underline: false, icon: ''}
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:Black', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: 'theme:Gray 300', bold: false, underline: false, icon: ''}
   name: p8_lbl
   layout_properties: {grid_position: 'SRBAOF,KGQLSZ'}
 is_package: true

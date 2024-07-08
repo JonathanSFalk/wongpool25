@@ -73,7 +73,18 @@ def get_all_homers(date):
         if games['gameType']=='R':
             thegameurl = 'http://statsapi.mlb.com/api/v1/game/{}/boxscore'.format(games['gamePk'])
             time.sleep(1)
-            thegame = anvil.http.request(thegameurl,json=True) 
+          ### NEW CODE TO TRY AND END JSON ERROR
+            for _ in range(5):
+              try:
+                thegame = anvil.http.request(thegameurl,json=True) #### Former line
+              except anvil.http.HttpError as e:
+                time.sleep(5)
+                continue
+              else:
+                break
+            else:
+              raise e
+            ####END OF NEW CODE  
             for l in lookup:
                 if 'ID' + str(l) in thegame['teams']['home']['players']:
                     homers = thegame['teams']['home']['players']['ID' + str(l)]['stats']['batting'].get('homeRuns',0)

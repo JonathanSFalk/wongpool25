@@ -6,13 +6,7 @@ components:
   layout_properties: {grid_position: 'JOMXLN,PZVRMA'}
   components:
   - name: headline_1
-    properties: {role: headline, text: 'Welcome to the 2024 Danny Wong Pool.  Before
-        the season starts, you can use this site to create as many teams as you like.  Only
-        teams you pay for, however, will be entered when the pool begins on March
-        25th.  All email addresses and names have been erased, so if this is your
-        first time this year, click the SIGN UP button.  You will get an email and
-        a link to be registered.  Once you are registered on some device, you can
-        log in with the LOG IN button. Write webmaster@wongpool.com with any questions.'}
+    properties: {role: headline, text: 'Welcome to the 2024 Danny Wong Pool.  Before the season starts, you can use this site to create as many teams as you like.  Only teams you pay for, however, will be entered when the pool begins on March 25th.  All email addresses and names have been erased, so if this is your first time this year, click the SIGN UP button.  You will get an email and a link to be registered.  Once you are registered on some device, you can log in with the LOG IN button. Write webmaster@wongpool.com with any questions.'}
     type: Label
     layout_properties: {grid_position: 'AYOKDQ,HKTVBA'}
 - name: login_status
@@ -20,9 +14,10 @@ components:
   type: Label
   layout_properties: {grid_position: 'MDLJQW,ELGFJY'}
 - name: signup_button
-  properties: {text: 'Sign Up
-
-      ', role: primary-color}
+  properties:
+    text: |
+      Sign Up
+    role: primary-color
   type: Button
   layout_properties: {grid_position: 'QVYLWS,NAPRBZ'}
   event_bindings: {click: signup_button_click}
