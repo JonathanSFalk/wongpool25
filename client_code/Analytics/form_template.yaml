@@ -1,55 +1,55 @@
-is_package: true
-container:
-  type: HtmlTemplate
-  properties: {html: '@theme:standard-page.html'}
 components:
-- type: ColumnPanel
-  properties: {col_widths: '{}'}
-  name: content_panel
-  layout_properties: {slot: default}
-  components:
-  - type: Label
-    properties: {}
+- components:
+  - layout_properties: {grid_position: 'QVFGHC,YDMGVZ'}
     name: label_1
-    layout_properties: {grid_position: 'QVFGHC,YDMGVZ'}
-  - type: DataRowPanel
     properties: {}
-    name: data_row_panel_1
-    layout_properties: {grid_position: 'QVFGHC,PELCOW'}
-    components:
-    - type: DropDown
+    type: Label
+  - components:
+    - event_bindings: {change: drop_down_1_change}
+      layout_properties: {column: null, grid_position: 'PUSGJC,UAEVNC'}
+      name: drop_down_1
       properties:
-        role: null
         align: full
-        tooltip: ''
-        placeholder: ''
-        border: ''
-        enabled: true
-        foreground: ''
-        items: [Total, April, May, June, July, August, September]
-        visible: true
-        font_size: null
-        font: ''
-        spacing_above: small
-        spacing_below: small
-        italic: false
         background: ''
         bold: false
-        underline: false
+        border: ''
+        enabled: true
+        font: ''
+        font_size: null
+        foreground: ''
         include_placeholder: false
-      name: drop_down_1
-      layout_properties: {grid_position: 'PUSGJC,UAEVNC', column: null}
-      event_bindings: {change: drop_down_1_change}
-  - type: Label
+        italic: false
+        items: [Total, April, May, June, July, August, September]
+        placeholder: ''
+        role: null
+        spacing_above: small
+        spacing_below: small
+        tooltip: ''
+        underline: false
+        visible: true
+      type: DropDown
+    layout_properties: {grid_position: 'QVFGHC,PELCOW'}
+    name: data_row_panel_1
     properties: {}
+    type: DataRowPanel
+  - layout_properties: {grid_position: 'QVFGHC,CIPYAT'}
     name: label_2
-    layout_properties: {grid_position: 'QVFGHC,CIPYAT'}
-  - type: Plot
     properties: {}
-    name: plot_1
+    type: Label
+  - event_bindings: {click: plot_1_click}
     layout_properties: {grid_position: 'BUCPWS,PHYENJ'}
-    event_bindings: {click: plot_1_click}
-- type: FlowPanel
-  properties: {}
+    name: plot_1
+    properties: {}
+    type: Plot
+  layout_properties: {slot: default}
+  name: content_panel
+  properties: {col_widths: '{}'}
+  type: ColumnPanel
+- layout_properties: {slot: nav-right}
   name: navbar_links
-  layout_properties: {slot: nav-right}
+  properties: {}
+  type: FlowPanel
+container:
+  properties: {html: '@theme:standard-page.html'}
+  type: HtmlTemplate
+is_package: true

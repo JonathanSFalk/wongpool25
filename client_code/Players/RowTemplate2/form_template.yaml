@@ -1,76 +1,76 @@
-container: {type: DataRowPanel}
 components:
-- type: DataRowPanel
-  properties: {}
+- layout_properties: {column: null}
   name: data_row_panel_1
-  layout_properties: {column: null}
-- type: Label
   properties: {}
-  name: label_2
+  type: DataRowPanel
+- data_bindings:
+  - {code: 'self.item[''fullname'']', property: text}
   layout_properties: {column: CZSCBQ}
-  data_bindings:
-  - {property: text, code: 'self.item[''fullname'']'}
-- type: Label
-  properties: {role: null, align: center, tooltip: '', border: '', foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
-  name: label_3
+  name: label_2
+  properties: {}
+  type: Label
+- data_bindings:
+  - {code: 'self.item[''pnum'']', property: text}
   layout_properties: {column: ROTNHO}
-  data_bindings:
-  - {property: text, code: 'self.item[''pnum'']'}
-- type: Link
-  properties: {}
-  name: link_1
-  layout_properties: {column: KTDXWR}
-  data_bindings:
-  - {property: url, code: '''https://baseball-reference.com/players/event_hr.fcgi?id=''+self.item[''Player''][''pbbref'']+''&t=b#all_play_by_play'''}
-  - {property: text, code: '''B-R'''}
+  name: label_3
+  properties: {align: center, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', underline: false, visible: true}
+  type: Label
+- data_bindings:
+  - {code: '''https://baseball-reference.com/players/event_hr.fcgi?id=''+self.item[''Player''][''pbbref'']+''&t=b#all_play_by_play''', property: url}
+  - {code: '''B-R''', property: text}
   event_bindings: {click: link_1_click}
-- type: Link
+  layout_properties: {column: KTDXWR}
+  name: link_1
   properties: {}
-  name: link_2
+  type: Link
+- data_bindings:
+  - {code: '''https://www.mlb.com/player/''+ str(self.item[''lookup''])', property: url}
+  - {code: '''MLB''', property: text}
   layout_properties: {column: PDAQPY}
-  data_bindings:
-  - {property: url, code: '''https://www.mlb.com/player/''+ str(self.item[''lookup''])'}
-  - {property: text, code: '''MLB'''}
-- type: Label
-  properties: {role: null, align: center, tooltip: '', border: '', foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
-  name: label_1
+  name: link_2
+  properties: {}
+  type: Link
+- data_bindings:
+  - {code: 'self.item[''April'']', property: text}
   layout_properties: {column: YYTRWD}
-  data_bindings:
-  - {property: text, code: 'self.item[''April'']'}
-- type: Label
-  properties: {role: null, align: center, tooltip: '', border: '', foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
-  name: label_4
+  name: label_1
+  properties: {align: center, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', underline: false, visible: true}
+  type: Label
+- data_bindings:
+  - {code: 'self.item[''May'']', property: text}
   layout_properties: {column: FUFQPJ}
-  data_bindings:
-  - {property: text, code: 'self.item[''May'']'}
-- type: Label
-  properties: {role: null, align: center, tooltip: '', border: '', foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
-  name: label_5
+  name: label_4
+  properties: {align: center, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', underline: false, visible: true}
+  type: Label
+- data_bindings:
+  - {code: 'self.item[''June'']', property: text}
   layout_properties: {column: PYTTNF}
-  data_bindings:
-  - {property: text, code: 'self.item[''June'']'}
-- type: Label
-  properties: {role: null, align: center, tooltip: '', border: '', foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
-  name: label_6
+  name: label_5
+  properties: {align: center, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', underline: false, visible: true}
+  type: Label
+- data_bindings:
+  - {code: 'self.item[''July'']', property: text}
   layout_properties: {column: DZJFPV}
-  data_bindings:
-  - {property: text, code: 'self.item[''July'']'}
-- type: Label
-  properties: {role: null, align: center, tooltip: '', border: '', foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
-  name: label_7
+  name: label_6
+  properties: {align: center, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', underline: false, visible: true}
+  type: Label
+- data_bindings:
+  - {code: 'self.item[''August'']', property: text}
   layout_properties: {column: YJPVVT}
-  data_bindings:
-  - {property: text, code: 'self.item[''August'']'}
-- type: Label
-  properties: {role: null, align: center, tooltip: '', border: '', foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
-  name: label_8
+  name: label_7
+  properties: {align: center, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', underline: false, visible: true}
+  type: Label
+- data_bindings:
+  - {code: 'self.item[''September'']', property: text}
   layout_properties: {column: RSRGJR}
-  data_bindings:
-  - {property: text, code: 'self.item[''September'']'}
-- type: Label
-  properties: {role: null, align: center, tooltip: '', border: '', foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
-  name: label_9
+  name: label_8
+  properties: {align: center, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', underline: false, visible: true}
+  type: Label
+- data_bindings:
+  - {code: 'self.item[''Total'']', property: text}
   layout_properties: {column: JSNMAC}
-  data_bindings:
-  - {property: text, code: 'self.item[''Total'']'}
+  name: label_9
+  properties: {align: center, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', underline: false, visible: true}
+  type: Label
+container: {type: DataRowPanel}
 is_package: true

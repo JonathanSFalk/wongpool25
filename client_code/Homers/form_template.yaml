@@ -1,91 +1,91 @@
-container:
-  type: ColumnPanel
-  event_bindings: {}
-  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true, wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"ZQRAMA":25,"YGCXWI":35,"NKOOWQ":20,"ZLEJIZ":5,"PVBHCK":55}', spacing_below: small, background: ''}
-  data_bindings: []
 components:
-- type: Label
-  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: Home Runs by Date, font_size: 20, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: true, underline: false, icon: ''}
-  name: label_1
+- event_bindings: {}
   layout_properties: {grid_position: 'YVICLY,IFRINW'}
-  event_bindings: {}
-- type: ColumnPanel
-  properties: {col_widths: '{}'}
-  name: column_panel_1
-  layout_properties: {grid_position: 'LIVQWZ,ZQRAMA'}
-  components:
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: Starting Date, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
+  name: label_1
+  properties: {align: left, background: '', bold: true, border: '', font: '', font_size: 20, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: Home Runs by Date, tooltip: '', underline: false, visible: true}
+  type: Label
+- components:
+  - layout_properties: {grid_position: 'LEJMRV,NMOVMY'}
     name: label_5
-    layout_properties: {grid_position: 'LEJMRV,NMOVMY'}
-  - type: DatePicker
-    properties: {role: null, align: left, max_date: 10 03 2024, pick_time: false, tooltip: '', placeholder: 03 20 2024, border: '', enabled: true, foreground: '', visible: true, font_size: null, font: '', spacing_above: small, spacing_below: small, italic: false, min_date: 03 20 2024, background: '', bold: false, underline: false, format: '%m %d %Y'}
-    name: date_picker_1
-    layout_properties: {grid_position: 'LEJMRV,EIFZZL'}
-    data_bindings: []
+    properties: {align: left, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: Starting Date, tooltip: '', underline: false, visible: true}
+    type: Label
+  - data_bindings: []
     event_bindings: {change: date_picker_1_change}
-- type: Label
-  properties: {}
+    layout_properties: {grid_position: 'LEJMRV,EIFZZL'}
+    name: date_picker_1
+    properties: {align: left, background: '', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', format: '%m %d %Y', italic: false, max_date: 10 03 2024, min_date: 03 20 2024, pick_time: false, placeholder: 03 20 2024, role: null, spacing_above: small, spacing_below: small, tooltip: '', underline: false, visible: true}
+    type: DatePicker
+  layout_properties: {grid_position: 'LIVQWZ,ZQRAMA'}
+  name: column_panel_1
+  properties: {col_widths: '{}'}
+  type: ColumnPanel
+- layout_properties: {grid_position: 'LIVQWZ,YGCXWI'}
   name: label_2
-  layout_properties: {grid_position: 'LIVQWZ,YGCXWI'}
-- type: Label
-  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: Number of Days, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
-  name: label_3
-  layout_properties: {grid_position: 'NEKSDP,NKOOWQ'}
-- type: TextBox
-  properties: {role: null, align: center, hide_text: false, tooltip: '', placeholder: '1', border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small, type: number, spacing_below: small, italic: false, background: '', bold: true, underline: false}
-  name: text_box_1
-  layout_properties: {grid_position: 'NEKSDP,ZLEJIZ'}
-- type: Label
   properties: {}
+  type: Label
+- layout_properties: {grid_position: 'NEKSDP,NKOOWQ'}
+  name: label_3
+  properties: {align: left, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: Number of Days, tooltip: '', underline: false, visible: true}
+  type: Label
+- layout_properties: {grid_position: 'NEKSDP,ZLEJIZ'}
+  name: text_box_1
+  properties: {align: center, background: '', bold: true, border: '', enabled: true, font: '', font_size: null, foreground: '', hide_text: false, italic: false, placeholder: '1', role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', type: number, underline: false, visible: true}
+  type: TextBox
+- layout_properties: {grid_position: 'NEKSDP,PVBHCK'}
   name: label_4
-  layout_properties: {grid_position: 'NEKSDP,PVBHCK'}
-- type: Button
-  properties: {role: null, align: center, tooltip: '', border: '', enabled: true, foreground: '#FAFAFA', visible: true, text: GO, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: 'theme:Primary 700', bold: true, underline: false, icon: ''}
-  name: button_1
+  properties: {}
+  type: Label
+- event_bindings: {click: button_1_click}
   layout_properties: {grid_position: 'QZNRXV,XUMCBI'}
-  event_bindings: {click: button_1_click}
-- type: DataGrid
+  name: button_1
+  properties: {align: center, background: 'theme:Primary 700', bold: true, border: '', enabled: true, font: '', font_size: null, foreground: '#FAFAFA', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: GO, tooltip: '', underline: false, visible: true}
+  type: Button
+- components:
+  - components:
+    - event_bindings: {click: button_2_click}
+      layout_properties: {column: PHIDQQ}
+      name: button_2
+      properties: {align: center, background: 'theme:Primary 700', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '#FAFAFA', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: Date (Click To Sort), tooltip: '', underline: false, visible: true}
+      type: Button
+    - event_bindings: {click: button_3_click}
+      layout_properties: {column: ZBTHSG}
+      name: button_3
+      properties: {align: center, background: 'theme:Primary 700', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '#FAFAFA', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: Player (Click to Sort), tooltip: '', underline: false, visible: true}
+      type: Button
+    - layout_properties: {column: MILYVH}
+      name: label_7
+      properties: {align: center, background: '', bold: true, border: '', font: '', font_size: 20, foreground: 'theme:Primary 500', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: Homers, tooltip: '', underline: false, visible: true}
+      type: Label
+    layout_properties: {pinned: true}
+    name: data_row_panel_1
+    properties: {align: left, auto_display_data: true, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', italic: false, item: null, role: null, spacing_above: none, spacing_below: none, tooltip: '', underline: false, visible: true}
+    type: DataRowPanel
+  - layout_properties: {}
+    name: repeating_panel_1
+    properties: {item_template: Homers.RowTemplate3, spacing_above: none, spacing_below: none}
+    type: RepeatingPanel
+  layout_properties: {grid_position: 'DVFBYT,WKOQIH'}
+  name: data_grid_1
   properties:
-    role: null
-    columns:
-    - {title: Date, id: PHIDQQ, data_key: date}
-    - {title: Player, id: ZBTHSG, data_key: player}
-    - {title: Homers, id: MILYVH, data_key: hr}
     auto_header: false
-    tooltip: ''
+    background: ''
     border: ''
+    columns:
+    - {data_key: date, id: PHIDQQ, title: Date}
+    - {data_key: player, id: ZBTHSG, title: Player}
+    - {data_key: hr, id: MILYVH, title: Homers}
     foreground: ''
+    role: null
     rows_per_page: 20
-    visible: false
     show_page_controls: true
     spacing_above: small
     spacing_below: small
-    background: ''
-  name: data_grid_1
-  layout_properties: {grid_position: 'DVFBYT,WKOQIH'}
-  components:
-  - type: DataRowPanel
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: '', auto_display_data: true, visible: true, item: null, font_size: null, font: '', spacing_above: none, spacing_below: none, italic: false, background: '', bold: false, underline: false}
-    name: data_row_panel_1
-    layout_properties: {pinned: true}
-    components:
-    - type: Button
-      properties: {role: null, align: center, tooltip: '', border: '', enabled: true, foreground: '#FAFAFA', visible: true, text: Date (Click To Sort), font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: 'theme:Primary 700', bold: false, underline: false, icon: ''}
-      name: button_2
-      layout_properties: {column: PHIDQQ}
-      event_bindings: {click: button_2_click}
-    - type: Button
-      properties: {role: null, align: center, tooltip: '', border: '', enabled: true, foreground: '#FAFAFA', visible: true, text: Player (Click to Sort), font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: 'theme:Primary 700', bold: false, underline: false, icon: ''}
-      name: button_3
-      layout_properties: {column: ZBTHSG}
-      event_bindings: {click: button_3_click}
-    - type: Label
-      properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:Primary 500', visible: true, text: Homers, font_size: 20, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: true, underline: false, icon: ''}
-      name: label_7
-      layout_properties: {column: MILYVH}
-  - type: RepeatingPanel
-    properties: {spacing_above: none, spacing_below: none, item_template: Homers.RowTemplate3}
-    name: repeating_panel_1
-    layout_properties: {}
+    tooltip: ''
+    visible: false
+  type: DataGrid
+container:
+  data_bindings: []
+  event_bindings: {}
+  properties: {background: '', border: '', col_spacing: medium, col_widths: '{"ZQRAMA":25,"YGCXWI":35,"NKOOWQ":20,"ZLEJIZ":5,"PVBHCK":55}', foreground: '', role: null, spacing_above: small, spacing_below: small, tooltip: '', visible: true, wrap_on: mobile}
+  type: ColumnPanel
 is_package: true

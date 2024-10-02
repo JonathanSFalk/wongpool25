@@ -1,18 +1,18 @@
-container: {type: ColumnPanel}
 components:
-- name: card_1
-  properties: {role: card}
-  type: ColumnPanel
-  layout_properties: {grid_position: 'GYMYRA,KUCUCZ'}
-  components:
-  - name: text_area_1
+- components:
+  - data_bindings:
+    - {code: '', property: height, writeback: false}
+    layout_properties: {grid_position: 'NMRGTQ,UCDXIZ'}
+    name: text_area_1
     properties:
-      text: "Total Entries\t101\t\n\t\t\nEntry Fee\t$150\t\n\t\t\nTotal Prize Money\t$15,150\t\n\t\t\n6 Monthly winners ( = 30% of total)\t$760\t$4,545\n\t\t\nOverall 1st place  \t\t$4,745\n\t\t\nOverall 2nd place  \t\t$3,230\n\t\t\nOverall 3rd place  \t\t$1,615\n\t\t\nOverall 4th place  \t\t$915\n\t\t\nOverall last place (Consolation)\t\t$100\n\t\t\nTotal monies to be paid out\t\t$15,150"
-      enabled: false
       auto_expand: true
       bold: true
+      enabled: false
+      text: "Total Entries\t101\t\n\t\t\nEntry Fee\t$150\t\n\t\t\nTotal Prize Money\t$15,150\t\n\t\t\n6 Monthly winners ( = 30% of total)\t$760\t$4,545\n\t\t\nOverall 1st place  \t\t$4,745\n\t\t\nOverall 2nd place  \t\t$3,230\n\t\t\nOverall 3rd place  \t\t$1,615\n\t\t\nOverall 4th place  \t\t$915\n\t\t\nOverall last place (Consolation)\t\t$100\n\t\t\nTotal monies to be paid out\t\t$15,150"
     type: TextArea
-    layout_properties: {grid_position: 'NMRGTQ,UCDXIZ'}
-    data_bindings:
-    - {property: height, code: '', writeback: false}
+  layout_properties: {grid_position: 'GYMYRA,KUCUCZ'}
+  name: card_1
+  properties: {role: card}
+  type: ColumnPanel
+container: {type: ColumnPanel}
 is_package: true

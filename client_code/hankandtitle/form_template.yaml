@@ -1,12 +1,9 @@
+components: []
 container:
-  type: HtmlTemplate
   properties:
-    tooltip: ''
     background: ''
-    foreground: ''
     border: ''
-    visible: true
-    role: null
+    foreground: ''
     html: |-
       <center style="font-style:italic; color:#888; margin: 3em;">
         @media screen and (max-width:600px) {
@@ -39,5 +36,8 @@ container:
       </div>
 
       </center>
-components: []
+    role: null
+    tooltip: ''
+    visible: true
+  type: HtmlTemplate
 is_package: true

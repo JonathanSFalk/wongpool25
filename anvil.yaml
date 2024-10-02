@@ -1,283 +1,283 @@
-scheduled_tasks:
-- task_name: update
-  time_spec:
-    n: 1
-    every: day
-    at: {minute: 0, hour: 10}
-  job_id: PWVJQAZL
+allow_embedding: false
+db_schema:
+  graphics:
+    client: none
+    columns:
+    - admin_ui: {width: 200}
+      name: What
+      type: string
+    - admin_ui: {width: 200}
+      name: Media
+      type: media
+    server: full
+    title: Graphics
+  homers:
+    client: search
+    columns:
+    - admin_ui: {width: 200}
+      name: plahman
+      type: string
+    - admin_ui: {width: 104}
+      name: date
+      type: string
+    - admin_ui: {width: 155}
+      name: gameid
+      type: string
+    - admin_ui: {width: 95}
+      name: homers
+      type: number
+    - admin_ui: {width: 200}
+      name: last_updated
+      type: datetime
+    server: full
+    title: Homers
+  mlbteams:
+    client: search
+    columns:
+    - admin_ui: {width: 200}
+      name: teamid
+      type: number
+    - admin_ui: {width: 200}
+      name: teamname
+      type: string
+    - admin_ui: {width: 200}
+      name: teamcode
+      type: string
+    - admin_ui: {width: 200}
+      name: tname_short
+      type: string
+    server: full
+    title: mlbteams
+  phmdat:
+    client: search
+    columns:
+    - admin_ui: {width: 200}
+      name: Player
+      target: players
+      type: link_single
+    - admin_ui: {width: 77}
+      name: April
+      type: number
+    - admin_ui: {width: 71}
+      name: May
+      type: number
+    - admin_ui: {width: 71}
+      name: June
+      type: number
+    - admin_ui: {width: 95.66669999999999}
+      name: July
+      type: number
+    - admin_ui: {width: 82}
+      name: August
+      type: number
+    - admin_ui: {width: 118.6667}
+      name: September
+      type: number
+    - admin_ui: {width: 79}
+      name: Total
+      type: number
+    - admin_ui: {width: 86}
+      name: pnum
+      type: number
+    - admin_ui: {width: 92}
+      name: plast
+      type: string
+    - admin_ui: {width: 114}
+      name: plahman
+      type: string
+    - admin_ui: {width: 200}
+      name: lookup
+      type: number
+    - admin_ui: {width: 200}
+      name: fullname
+      type: string
+    server: full
+    title: phmdat
+  players:
+    client: search
+    columns:
+    - admin_ui: {width: 87}
+      name: pnum
+      type: number
+    - admin_ui: {width: 100}
+      name: plahman
+      type: string
+    - admin_ui: {width: 134}
+      name: fullname
+      type: string
+    - admin_ui: {width: 89}
+      name: Weight
+      type: number
+    - admin_ui: {width: 135}
+      name: plast
+      type: string
+    - admin_ui: {width: 169}
+      name: lookup
+      type: number
+    - admin_ui: {width: 200}
+      name: pbbref
+      type: string
+    - admin_ui: {order: 7, width: 200}
+      name: teams
+      type: simpleObject
+    server: full
+    title: Players
+  teams:
+    client: search
+    columns:
+    - admin_ui: {width: 105}
+      name: Teamnum
+      type: number
+    - admin_ui: {width: 200}
+      name: Teamname
+      type: string
+    - admin_ui: {width: 61}
+      name: P1
+      type: number
+    - admin_ui: {width: 54}
+      name: P2
+      type: number
+    - admin_ui: {width: 58}
+      name: P3
+      type: number
+    - admin_ui: {width: 60}
+      name: P4
+      type: number
+    - admin_ui: {width: 60}
+      name: P5
+      type: number
+    - admin_ui: {width: 58}
+      name: P6
+      type: number
+    - admin_ui: {width: 61}
+      name: P7
+      type: number
+    - admin_ui: {width: 84}
+      name: P8
+      type: number
+    - admin_ui: {width: 74}
+      name: April
+      type: number
+    - admin_ui: {width: 76}
+      name: June
+      type: number
+    - admin_ui: {width: 70}
+      name: July
+      type: number
+    - admin_ui: {width: 97}
+      name: August
+      type: number
+    - admin_ui: {width: 109}
+      name: September
+      type: number
+    - admin_ui: {width: 98}
+      name: Total
+      type: number
+    - admin_ui: {width: 200}
+      name: Owner
+      type: string
+    - admin_ui: {width: 71}
+      name: May
+      type: number
+    - admin_ui: {width: 200}
+      name: Paid
+      type: bool
+    server: full
+    title: Teams
+  update:
+    client: none
+    columns:
+    - admin_ui: {width: 200}
+      name: Counter
+      type: string
+    - admin_ui: {width: 331.99726}
+      name: Id
+      type: string
+    server: full
+    title: Update
+  users:
+    client: none
+    columns:
+    - admin_ui: {width: 200}
+      name: email
+      type: string
+    - admin_ui: {width: 100}
+      name: enabled
+      type: bool
+    - admin_ui: {width: 200}
+      name: signed_up
+      type: datetime
+    - admin_ui: {width: 200}
+      name: password_hash
+      type: string
+    - admin_ui: {width: 200}
+      name: confirmed_email
+      type: bool
+    - admin_ui: {width: 200}
+      name: email_confirmation_key
+      type: string
+    - admin_ui: {width: 200}
+      name: n_password_failures
+      type: number
+    - admin_ui: {width: 200}
+      name: last_login
+      type: datetime
+    - admin_ui: {width: 190}
+      name: owner
+      type: string
+    - admin_ui: {width: 200}
+      name: remembered_logins
+      type: simpleObject
+    - admin_ui: {order: 6.5, width: 200}
+      name: name
+      type: string
+    - admin_ui: {order: 6.25, width: 200}
+      name: link_key
+      type: string
+    server: full
+    title: Users
 dependencies:
 - dep_id: dep_rrwzbqc70xzhh
-  version: {dev: false}
   resolution_hints: {app_id: EKREBQWOD4JB5V7Q, name: Clone of Custom sign-up flow, package_name: custom_signup}
-services:
-- source: /runtime/services/tables.yml
-  client_config: {enable_v2: true}
-  server_config: {}
-- source: /runtime/services/anvil/users.yml
-  client_config: {require_secure_passwords: false, use_token: false, use_email: true, allow_remember_me: false, allow_signup: false, enable_automatically: true, confirm_email: true, remember_me_days: 365, use_google: false, use_facebook: false}
-  server_config: {user_table: users, email_from_address: webmaster@wongpool.com}
-- source: /runtime/services/anvil/email.yml
-  client_config: {}
-  server_config: {}
-- source: /runtime/services/google.yml
-  client_config: {}
-  server_config: {}
-- source: /runtime/services/stripe.yml
-  client_config: {}
-  server_config: {}
-- source: /runtime/services/anvil/secrets.yml
-  client_config: {}
-  server_config: {}
-- source: /runtime/services/facebook.yml
-  client_config: {}
-  server_config: {}
-startup: {type: module, module: Module1}
-package_name: Wongpool_2021
-allow_embedding: false
+  version: {dev: false}
+metadata: {description: Pool Status, logo_img: 'asset:baseball.jpeg', title: Wongpool}
 name: Wongpool 2024
-runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
-metadata: {title: Wongpool, description: Pool Status, logo_img: 'asset:baseball.jpeg'}
-startup_form: HomePage
 native_deps: {head_html: ''}
-db_schema:
-  teams:
-    title: Teams
-    client: search
-    server: full
-    columns:
-    - name: Teamnum
-      admin_ui: {width: 105}
-      type: number
-    - name: Teamname
-      admin_ui: {width: 200}
-      type: string
-    - name: P1
-      admin_ui: {width: 61}
-      type: number
-    - name: P2
-      admin_ui: {width: 54}
-      type: number
-    - name: P3
-      admin_ui: {width: 58}
-      type: number
-    - name: P4
-      admin_ui: {width: 60}
-      type: number
-    - name: P5
-      admin_ui: {width: 60}
-      type: number
-    - name: P6
-      admin_ui: {width: 58}
-      type: number
-    - name: P7
-      admin_ui: {width: 61}
-      type: number
-    - name: P8
-      admin_ui: {width: 84}
-      type: number
-    - name: April
-      admin_ui: {width: 74}
-      type: number
-    - name: June
-      admin_ui: {width: 76}
-      type: number
-    - name: July
-      admin_ui: {width: 70}
-      type: number
-    - name: August
-      admin_ui: {width: 97}
-      type: number
-    - name: September
-      admin_ui: {width: 109}
-      type: number
-    - name: Total
-      admin_ui: {width: 98}
-      type: number
-    - name: Owner
-      admin_ui: {width: 200}
-      type: string
-    - name: May
-      admin_ui: {width: 71}
-      type: number
-    - name: Paid
-      admin_ui: {width: 200}
-      type: bool
-  players:
-    title: Players
-    client: search
-    server: full
-    columns:
-    - name: pnum
-      admin_ui: {width: 87}
-      type: number
-    - name: plahman
-      admin_ui: {width: 100}
-      type: string
-    - name: fullname
-      admin_ui: {width: 134}
-      type: string
-    - name: Weight
-      admin_ui: {width: 89}
-      type: number
-    - name: plast
-      admin_ui: {width: 135}
-      type: string
-    - name: lookup
-      admin_ui: {width: 169}
-      type: number
-    - name: pbbref
-      admin_ui: {width: 200}
-      type: string
-    - name: teams
-      admin_ui: {order: 7, width: 200}
-      type: simpleObject
-  homers:
-    title: Homers
-    client: search
-    server: full
-    columns:
-    - name: plahman
-      admin_ui: {width: 200}
-      type: string
-    - name: date
-      admin_ui: {width: 104}
-      type: string
-    - name: gameid
-      admin_ui: {width: 155}
-      type: string
-    - name: homers
-      admin_ui: {width: 95}
-      type: number
-    - name: last_updated
-      admin_ui: {width: 200}
-      type: datetime
-  mlbteams:
-    title: mlbteams
-    client: search
-    server: full
-    columns:
-    - name: teamid
-      admin_ui: {width: 200}
-      type: number
-    - name: teamname
-      admin_ui: {width: 200}
-      type: string
-    - name: teamcode
-      admin_ui: {width: 200}
-      type: string
-    - name: tname_short
-      admin_ui: {width: 200}
-      type: string
-  users:
-    title: Users
-    client: none
-    server: full
-    columns:
-    - name: email
-      admin_ui: {width: 200}
-      type: string
-    - name: enabled
-      admin_ui: {width: 100}
-      type: bool
-    - name: signed_up
-      admin_ui: {width: 200}
-      type: datetime
-    - name: password_hash
-      admin_ui: {width: 200}
-      type: string
-    - name: confirmed_email
-      admin_ui: {width: 200}
-      type: bool
-    - name: email_confirmation_key
-      admin_ui: {width: 200}
-      type: string
-    - name: n_password_failures
-      admin_ui: {width: 200}
-      type: number
-    - name: last_login
-      admin_ui: {width: 200}
-      type: datetime
-    - name: owner
-      admin_ui: {width: 190}
-      type: string
-    - name: remembered_logins
-      admin_ui: {width: 200}
-      type: simpleObject
-    - name: name
-      admin_ui: {width: 200, order: 6.5}
-      type: string
-    - name: link_key
-      admin_ui: {width: 200, order: 6.25}
-      type: string
-  phmdat:
-    title: phmdat
-    client: search
-    server: full
-    columns:
-    - name: Player
-      admin_ui: {width: 200}
-      type: link_single
-      target: players
-    - name: April
-      admin_ui: {width: 77}
-      type: number
-    - name: May
-      admin_ui: {width: 71}
-      type: number
-    - name: June
-      admin_ui: {width: 71}
-      type: number
-    - name: July
-      admin_ui: {width: 95.66669999999999}
-      type: number
-    - name: August
-      admin_ui: {width: 82}
-      type: number
-    - name: September
-      admin_ui: {width: 118.6667}
-      type: number
-    - name: Total
-      admin_ui: {width: 79}
-      type: number
-    - name: pnum
-      admin_ui: {width: 86}
-      type: number
-    - name: plast
-      admin_ui: {width: 92}
-      type: string
-    - name: plahman
-      admin_ui: {width: 114}
-      type: string
-    - name: lookup
-      admin_ui: {width: 200}
-      type: number
-    - name: fullname
-      admin_ui: {width: 200}
-      type: string
-  graphics:
-    title: Graphics
-    client: none
-    server: full
-    columns:
-    - name: What
-      admin_ui: {width: 200}
-      type: string
-    - name: Media
-      admin_ui: {width: 200}
-      type: media
-  update:
-    title: Update
-    client: none
-    server: full
-    columns:
-    - name: Counter
-      admin_ui: {width: 200}
-      type: string
-    - name: Id
-      admin_ui: {width: 331.99726}
-      type: string
+package_name: Wongpool_2021
+renamed: true
+runtime_options: {client_version: '3', server_spec: null, server_version: python3-full, version: 2}
+scheduled_tasks:
+- job_id: PWVJQAZL
+  task_name: update
+  time_spec:
+    at: {hour: 10, minute: 0}
+    every: day
+    n: 1
 secrets:
   sendgrid:
-    value: {? '' : N2IJqSUF41vVDcp41++6UAssKzqeciaXl/amBaoUUYXx+g7GnAQvRpwwQAxTyHHd3R+h7Vvp1YSRFMy0gGMJ71aGcpNWLUJGWPjt447MlkFQHSL3cP4/3LINscUGLetzEOpRGf7mPWOGviqyC/YPtPpAq72Szdq4eVk32YwTaMglaYCExlMSewda/jCwNoKNcM8dxcYUwUnn6V1BJDOE1nQ2+gg=}
     type: secret
-renamed: true
+    value: {? '' : N2IJqSUF41vVDcp41++6UAssKzqeciaXl/amBaoUUYXx+g7GnAQvRpwwQAxTyHHd3R+h7Vvp1YSRFMy0gGMJ71aGcpNWLUJGWPjt447MlkFQHSL3cP4/3LINscUGLetzEOpRGf7mPWOGviqyC/YPtPpAq72Szdq4eVk32YwTaMglaYCExlMSewda/jCwNoKNcM8dxcYUwUnn6V1BJDOE1nQ2+gg=}
+services:
+- client_config: {enable_v2: true}
+  server_config: {}
+  source: /runtime/services/tables.yml
+- client_config: {allow_remember_me: false, allow_signup: false, confirm_email: true, enable_automatically: true, remember_me_days: 365, require_secure_passwords: false, use_email: true, use_facebook: false, use_google: false, use_token: false}
+  server_config: {email_from_address: webmaster@wongpool.com, user_table: users}
+  source: /runtime/services/anvil/users.yml
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/anvil/email.yml
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/google.yml
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/stripe.yml
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/anvil/secrets.yml
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/facebook.yml
+startup: {module: Module1, type: module}
+startup_form: HomePage

@@ -1,40 +1,40 @@
-container:
-  type: ColumnPanel
-  properties: {col_widths: '{}'}
 components:
-- type: DataGrid
+- components:
+  - data_bindings:
+    - {code: 'self.item[1]', property: items}
+    layout_properties: {}
+    name: repeating_panel_1
+    properties: {item_template: Form1.RowTemplate7, spacing_above: none, spacing_below: none}
+    type: RepeatingPanel
+  data_bindings: []
+  layout_properties: {grid_position: 'CEKLCB,IPYAGN'}
+  name: data_grid_1
   properties:
-    role: null
-    columns:
-    - {id: WXEHSB, title: '#', data_key: column_1}
-    - {id: TCRLSE, title: Email, data_key: '', width: 216, expand: false}
-    - {id: BYTQIA, title: Teamname, data_key: '', width: 152, expand: false}
-    - {id: WXHVUG, title: P1, data_key: ''}
-    - {id: DFKNTQ, title: P2, data_key: ''}
-    - {id: OGZTXY, title: P3, data_key: ''}
-    - {id: AZNAOC, title: P4, data_key: ''}
-    - {id: JLCNZX, title: P5, data_key: ''}
-    - {id: YLBRTD, title: P6, data_key: ''}
-    - {id: AJOOLU, title: P7, data_key: ''}
-    - {id: RLRWVL, title: P8, data_key: ''}
     auto_header: true
-    tooltip: ''
+    background: ''
     border: ''
+    columns:
+    - {data_key: column_1, id: WXEHSB, title: '#'}
+    - {data_key: '', expand: false, id: TCRLSE, title: Email, width: 216}
+    - {data_key: '', expand: false, id: BYTQIA, title: Teamname, width: 152}
+    - {data_key: '', id: WXHVUG, title: P1}
+    - {data_key: '', id: DFKNTQ, title: P2}
+    - {data_key: '', id: OGZTXY, title: P3}
+    - {data_key: '', id: AZNAOC, title: P4}
+    - {data_key: '', id: JLCNZX, title: P5}
+    - {data_key: '', id: YLBRTD, title: P6}
+    - {data_key: '', id: AJOOLU, title: P7}
+    - {data_key: '', id: RLRWVL, title: P8}
     foreground: ''
+    role: null
     rows_per_page: 90
-    visible: true
     show_page_controls: true
     spacing_above: small
     spacing_below: small
-    background: ''
-  name: data_grid_1
-  layout_properties: {grid_position: 'CEKLCB,IPYAGN'}
-  components:
-  - type: RepeatingPanel
-    properties: {spacing_above: none, spacing_below: none, item_template: Form1.RowTemplate7}
-    name: repeating_panel_1
-    layout_properties: {}
-    data_bindings:
-    - {property: items, code: 'self.item[1]'}
-  data_bindings: []
+    tooltip: ''
+    visible: true
+  type: DataGrid
+container:
+  properties: {col_widths: '{}'}
+  type: ColumnPanel
 is_package: true

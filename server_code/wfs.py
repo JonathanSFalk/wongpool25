@@ -98,12 +98,15 @@ def getresults():
     results = []
     months = ("April: ","May: ","June: ","July: ","Aug: ","Sept: ")
     last_month = int(dmax[5:7])
+    # New line if the season ends in September
+    # Comment out when season begind
+    last_month = 10
     if last_month==3:
       last_month=4
     if last_month==10:
       last_month=9
     # Comment out ofter last games  
-    #  last_month = 10  
+      last_month = 10  
     # Create monthly winners: results code 1
     for i in range(4,last_month):
         standings = monthstandings(i)

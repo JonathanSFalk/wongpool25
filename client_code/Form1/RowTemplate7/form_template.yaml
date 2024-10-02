@@ -1,69 +1,69 @@
-container: {type: DataRowPanel}
 components:
-- type: Label
-  properties: {}
-  name: label_1
+- data_bindings:
+  - {code: 'self.item[0]', property: text}
   layout_properties: {column: TCRLSE}
-  data_bindings:
-  - {property: text, code: 'self.item[0]'}
-- type: Label
+  name: label_1
   properties: {}
-  name: label_2
+  type: Label
+- data_bindings:
+  - {code: 'self.item[1]', property: text}
   layout_properties: {column: BYTQIA}
-  data_bindings:
-  - {property: text, code: 'self.item[1]'}
-- type: Label
+  name: label_2
   properties: {}
-  name: label_3
+  type: Label
+- data_bindings:
+  - {code: 'self.item[2]', property: text}
   layout_properties: {column: WXHVUG}
-  data_bindings:
-  - {property: text, code: 'self.item[2]'}
-- type: Label
+  name: label_3
   properties: {}
-  name: label_4
+  type: Label
+- data_bindings:
+  - {code: 'self.item[3]', property: text}
   layout_properties: {column: DFKNTQ}
-  data_bindings:
-  - {property: text, code: 'self.item[3]'}
-- type: Label
+  name: label_4
   properties: {}
-  name: label_5
+  type: Label
+- data_bindings:
+  - {code: 'self.item[4]', property: text}
   layout_properties: {column: OGZTXY}
-  data_bindings:
-  - {property: text, code: 'self.item[4]'}
-- type: Label
+  name: label_5
   properties: {}
-  name: label_6
+  type: Label
+- data_bindings:
+  - {code: 'self.item[5]', property: text}
   layout_properties: {column: AZNAOC}
-  data_bindings:
-  - {property: text, code: 'self.item[5]'}
-- type: Label
+  name: label_6
   properties: {}
-  name: label_7
+  type: Label
+- data_bindings:
+  - {code: 'self.item[6]', property: text}
   layout_properties: {column: JLCNZX}
-  data_bindings:
-  - {property: text, code: 'self.item[6]'}
-- type: Label
+  name: label_7
   properties: {}
-  name: label_8
+  type: Label
+- data_bindings:
+  - {code: 'self.item[7]', property: text}
   layout_properties: {column: YLBRTD}
-  data_bindings:
-  - {property: text, code: 'self.item[7]'}
-- type: Label
+  name: label_8
   properties: {}
-  name: label_9
+  type: Label
+- data_bindings:
+  - {code: 'self.item[8]', property: text}
   layout_properties: {column: AJOOLU}
-  data_bindings:
-  - {property: text, code: 'self.item[8]'}
-- type: Label
+  name: label_9
   properties: {}
-  name: label_10
+  type: Label
+- data_bindings:
+  - {code: 'self.item[9]', property: text}
   layout_properties: {column: RLRWVL}
-  data_bindings:
-  - {property: text, code: 'self.item[9]'}
-- type: Label
+  name: label_10
   properties: {}
-  name: label_11
+  type: Label
+- data_bindings:
+  - {code: 'self.item[10]', property: text}
   layout_properties: {column: WXEHSB}
-  data_bindings:
-  - {property: text, code: 'self.item[10]'}
+  name: label_11
+  properties: {}
+  type: Label
+container: {type: DataRowPanel}
 is_package: true

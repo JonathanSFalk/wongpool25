@@ -1,29 +1,29 @@
-is_package: true
-container:
-  type: HtmlTemplate
-  properties: {tooltip: '', background: '', foreground: 'theme:White', border: '', visible: true, role: null, html: '@theme:standard-page.html'}
 components:
-- type: ColumnPanel
-  properties: {col_widths: '{}'}
-  name: content_panel
+- components: []
   layout_properties: {slot: default}
-  components: []
-- type: FlowPanel
-  properties: {}
-  name: navbar_links
-  layout_properties: {slot: nav-right}
-  components:
-  - type: Button
-    properties: {role: null, align: center, tooltip: '', border: '', enabled: true, foreground: 'theme:White', visible: true, text: Download Teams, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: 'theme:Primary 700', bold: false, underline: false, icon: ''}
+  name: content_panel
+  properties: {col_widths: '{}'}
+  type: ColumnPanel
+- components:
+  - event_bindings: {click: button_2_click}
+    layout_properties: {}
     name: button_2
+    properties: {align: center, background: 'theme:Primary 700', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: 'theme:White', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: Download Teams, tooltip: '', underline: false, visible: true}
+    type: Button
+  - event_bindings: {click: button_1_click}
     layout_properties: {}
-    event_bindings: {click: button_2_click}
-  - type: Button
-    properties: {role: secondary-color, align: center, tooltip: '', border: '', enabled: true, foreground: '', visible: true, text: Back To Picker, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: 'theme:Primary 700', bold: false, underline: false, icon: 'fa:backward'}
     name: button_1
-    layout_properties: {}
-    event_bindings: {click: button_1_click}
-- type: Label
-  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: Your Teams, font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: false, underline: false, icon: ''}
+    properties: {align: center, background: 'theme:Primary 700', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', icon: 'fa:backward', icon_align: left, italic: false, role: secondary-color, spacing_above: small, spacing_below: small, text: Back To Picker, tooltip: '', underline: false, visible: true}
+    type: Button
+  layout_properties: {slot: nav-right}
+  name: navbar_links
+  properties: {}
+  type: FlowPanel
+- layout_properties: {slot: title}
   name: label_1
-  layout_properties: {slot: title}
+  properties: {align: left, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: Your Teams, tooltip: '', underline: false, visible: true}
+  type: Label
+container:
+  properties: {background: '', border: '', foreground: 'theme:White', html: '@theme:standard-page.html', role: null, tooltip: '', visible: true}
+  type: HtmlTemplate
+is_package: true

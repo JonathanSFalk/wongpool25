@@ -1,32 +1,32 @@
-container:
-  type: ColumnPanel
-  event_bindings: {}
-  properties: {col_widths: '{}'}
 components:
-- type: Label
-  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true, text: 'Who''s Hot: Homers in the Last 10 Days', font_size: 20, font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '', bold: true, underline: false, icon: ''}
+- layout_properties: {grid_position: 'JDIJFF,FZCBMN'}
   name: label_1
-  layout_properties: {grid_position: 'JDIJFF,FZCBMN'}
-- type: DataGrid
+  properties: {align: left, background: '', bold: true, border: '', font: '', font_size: 20, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: 'Who''s Hot: Homers in the Last 10 Days', tooltip: '', underline: false, visible: true}
+  type: Label
+- components:
+  - layout_properties: {}
+    name: repeating_panel_1
+    properties: {item_template: RowTemplate5, spacing_above: none, spacing_below: none}
+    type: RepeatingPanel
+  layout_properties: {grid_position: 'FQYZIG,TTQUBY'}
+  name: data_grid_1
   properties:
-    role: null
-    columns:
-    - {width: 158, title: Player, id: QCGULM, data_key: player, expand: false}
-    - {width: 64, title: Homers, id: LYUEMW, data_key: hr, expand: false}
     auto_header: true
-    tooltip: ''
+    background: ''
     border: ''
+    columns:
+    - {data_key: player, expand: false, id: QCGULM, title: Player, width: 158}
+    - {data_key: hr, expand: false, id: LYUEMW, title: Homers, width: 64}
     foreground: ''
+    role: null
     rows_per_page: 20
-    visible: true
     show_page_controls: true
     spacing_above: small
     spacing_below: small
-    background: ''
-  name: data_grid_1
-  layout_properties: {grid_position: 'FQYZIG,TTQUBY'}
-  components:
-  - type: RepeatingPanel
-    properties: {spacing_above: none, spacing_below: none, item_template: RowTemplate5}
-    name: repeating_panel_1
-    layout_properties: {}
+    tooltip: ''
+    visible: true
+  type: DataGrid
+container:
+  event_bindings: {}
+  properties: {col_widths: '{}'}
+  type: ColumnPanel
