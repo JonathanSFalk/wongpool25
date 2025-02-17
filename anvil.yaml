@@ -241,7 +241,7 @@ dependencies:
   resolution_hints: {app_id: EKREBQWOD4JB5V7Q, name: Clone of Custom sign-up flow, package_name: custom_signup}
   version: {dev: false}
 metadata: {description: Pool Status, logo_img: 'asset:baseball.jpeg', title: Wongpool}
-name: Wongpool 2024
+name: Wongpool 2025
 native_deps: {head_html: ''}
 package_name: Wongpool_2021
 renamed: true
