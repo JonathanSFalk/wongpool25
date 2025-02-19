@@ -50,10 +50,9 @@ def get_all_homers(date):
 #custom_signup.login_flow.do_email_confirm_or_reset()
 # Open Form1
 open_form('signup')
-user = anvil.users.get_user()
-while user is None:
-  user = anvil.users.get_user()
-open_form('TeamPicker')
+#user = anvil.users.get_user()
+#while user is None:
+#rm('TeamPicker')
 #update_text = update()
 #z=anvil.server.call('check')
 #tlist = anvil.server.call('team_list')
