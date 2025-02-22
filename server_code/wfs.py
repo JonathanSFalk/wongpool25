@@ -188,7 +188,6 @@ def get_pdict():
 def save_team(owner,name,team):
   tnums = [r['Teamnum'] for r in app_tables.teams.search()]
   tnums.sort()
-  print(tnums)
   if tnums == []:
     nextnum = 1
   elif len(tnums) == tnums[len(tnums)-1]:
@@ -196,10 +195,14 @@ def save_team(owner,name,team):
   else:
     tset = set(tnums)
     nextnum = [x for x in range(1,len(tset)+1) if x not in tset][0]
-  pnames,_,_,_ = pdict() 
+  pnames,_,_,_ = pdict()
+  nums = [0,0,0,0,0,0,0,0]
+  for  i in range(0,8):
+    nums[i] = pnames[team[i]]
+  nums.sort()
   app_tables.teams.add_row(Teamname=name,Owner=owner,Teamnum=nextnum,
-             P1=pnames[team[0]],P2=pnames[team[1]],P3=pnames[team[2]],P4=pnames[team[3]],
-             P5=pnames[team[4]],P6=pnames[team[5]],P7=pnames[team[6]],P8=pnames[team[7]])
+             P1=nums[0],P2=nums[1],P3=nums[2],P4=nums[3],
+             P5=nums[4],P6=nums[5],P7=nums[6],P8=nums[7])
   return                         
 
 
