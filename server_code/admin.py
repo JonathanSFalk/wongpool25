@@ -90,55 +90,7 @@ def hash_password(password, salt):
   if isinstance(result, bytes):
     return result.decode('utf-8')
 
-@anvil.server.callable
-def _send_email_confirm_link(email):
-  """Send an email confirmation link if the specified user's email is not yet confirmed"""
-  user = app_tables.users.get(email=email)
-  if user is not None and not user['confirmed_email']:
-    if user['link_key'] is None:
-      user['link_key'] = mk_token()
-    anvil.email.send(to=user['email'], subject="Confirm your email address", text=f"""
-Hi,
-
-Thanks for signing up for our service. To complete your sign-up, click here to confirm your email address:
-
-{anvil.server.get_app_origin('published')}#?email={url_encode(user['email'])}&confirm={url_encode(user['link_key'])}
-
-Thanks!
-""")
-    return True
-  
-@anvil.server.callable
-def _do_signup(email, name, password):   
-  if (name is None) or (name.strip() == ""):
-    return "Must supply a name"
-  if app_tables.users.get(email=name) is not None:
-    return "Name is already being used.  Choose another."
-  
-  pwhash = hash_password(password, bcrypt.gensalt())
-  
-  # Add the user in a transaction, to make sure there is only ever one user in this database
-  # with this email address. The transaction might retry or abort, so wait until after it's
-  # done before sending the email.
-
-  @tables.in_transaction
-  def add_user_if_missing():
-      
-    user = app_tables.users.get(email=email)
-    if user is None:
-      user = app_tables.users.add_row(email=email, enabled=True, owner=email, password_hash=pwhash)
-      return user
-    
-  user = add_user_if_missing()
-
-  if user is None:
-    return "This email address has already been registered for our service. Try logging in."
-  
-#  _send_email_confirm_link(email)
-  
-  # No error = success
-  anvil.users.force_login(user)
-  return None
+ 
 
 @anvil.server.callable
 def fill_in_players():

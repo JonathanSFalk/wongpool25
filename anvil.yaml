@@ -243,7 +243,7 @@ dependencies:
 metadata: {description: Pool Status, logo_img: 'asset:baseball.jpeg', title: Wongpool}
 name: Wongpool 2025
 native_deps: {head_html: ''}
-package_name: Wongpool_2021
+package_name: Wongpool
 renamed: true
 runtime_options: {client_version: '3', server_spec: null, server_version: python3-full, version: 2}
 scheduled_tasks:

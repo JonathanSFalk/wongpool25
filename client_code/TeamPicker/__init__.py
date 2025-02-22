@@ -20,7 +20,7 @@ class TeamPicker(TeamPickerTemplate):
     self.navbar_links.width = self.ws*.9
     self.user = anvil.users.get_user(allow_remembered=True)
     self.label_3.text = self.user['email']
-    self.cap = 214
+    self.cap = 210
     self.label_2.text = f"Check a box to select that player.  Unchecking unselects.  Any legal team (8 players, Total {self.cap} or less) can be saved"
     self.pset = set()
     # Any code you write here will run when the form opens.
