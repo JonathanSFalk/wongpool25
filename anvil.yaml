@@ -281,3 +281,4 @@ services:
   source: /runtime/services/facebook.yml
 startup: {module: Module1, type: module}
 startup_form: HomePage
+uplink_visible: true
