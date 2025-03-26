@@ -148,8 +148,6 @@ def monthstandings(month):
       
     #print(mstandings)
     #print(teamsort)
-    for i in mstandings:
-      print(i[1],-i[2]*10000 + teamsort.index(i[1]))
     return sorted(mstandings,key=lambda x: (-x[2] * 10000 + teamsort.index(x[1])))
 
 def top5(rowtype,standlist):
