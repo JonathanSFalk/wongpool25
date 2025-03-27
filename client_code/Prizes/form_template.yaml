@@ -8,7 +8,7 @@ components:
       auto_expand: true
       bold: true
       enabled: false
-      text: "Total Entries\t101\t\n\t\t\nEntry Fee\t$150\t\n\t\t\nTotal Prize Money\t$15,150\t\n\t\t\n6 Monthly winners ( = 30% of total)\t$760\t$4,545\n\t\t\nOverall 1st place  \t\t$4,745\n\t\t\nOverall 2nd place  \t\t$3,230\n\t\t\nOverall 3rd place  \t\t$1,615\n\t\t\nOverall 4th place  \t\t$915\n\t\t\nOverall last place (Consolation)\t\t$100\n\t\t\nTotal monies to be paid out\t\t$15,150"
+      text: "TO BE UPDATED FOR 2025 Shortly\nTotal Entries\t101\t\n\t\t\nEntry Fee\t$150\t\n\t\t\nTotal Prize Money\t$15,150\t\n\t\t\n6 Monthly winners ( = 30% of total)\t$760\t$4,545\n\t\t\nOverall 1st place  \t\t$4,745\n\t\t\nOverall 2nd place  \t\t$3,230\n\t\t\nOverall 3rd place  \t\t$1,615\n\t\t\nOverall 4th place  \t\t$915\n\t\t\nOverall last place (Consolation)\t\t$100\n\t\t\nTotal monies to be paid out\t\t$15,150"
     type: TextArea
   layout_properties: {grid_position: 'GYMYRA,KUCUCZ'}
   name: card_1
