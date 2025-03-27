@@ -21,7 +21,7 @@ components:
     underline: false
     visible: true
   type: Label
-- event_bindings: {show: p2teams_show}
+- event_bindings: {}
   layout_properties: {grid_position: 'GBCWWK,LGTYEH'}
   name: p2teams
   properties: {}
