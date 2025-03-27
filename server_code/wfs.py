@@ -204,7 +204,7 @@ def save_team(owner,name,team):
   nums.sort()
   app_tables.teams.add_row(Teamname=name,Owner=owner,Teamnum=nextnum,
              P1=nums[0],P2=nums[1],P3=nums[2],P4=nums[3],
-             P5=nums[4],P6=nums[5],P7=nums[6],P8=nums[7])
+             P5=nums[4],P6=nums[5],P7=nums[6],P8=nums[7],April=0,May=0,June=0,July=0,August=0,September=0,Total=0)
   return                         
 
 
