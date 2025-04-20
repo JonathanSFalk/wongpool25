@@ -13,7 +13,7 @@ components:
     event_bindings: {change: date_picker_1_change}
     layout_properties: {grid_position: 'LEJMRV,EIFZZL'}
     name: date_picker_1
-    properties: {align: left, background: '', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', format: '%m %d %Y', italic: false, max_date: 10 03 2024, min_date: 03 20 2024, pick_time: false, placeholder: 03 20 2024, role: null, spacing_above: small, spacing_below: small, tooltip: '', underline: false, visible: true}
+    properties: {align: left, background: '', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', format: '%m %d %Y', italic: false, max_date: 10 03 2025, min_date: 03 20 2025, pick_time: false, placeholder: 03 20 2025, role: null, spacing_above: small, spacing_below: small, tooltip: '', underline: false, visible: true}
     type: DatePicker
   layout_properties: {grid_position: 'LIVQWZ,ZQRAMA'}
   name: column_panel_1
