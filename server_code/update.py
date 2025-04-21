@@ -153,7 +153,7 @@ def update():
     message = Mail(
     from_email='webmaster@wongpool.com',
 #    to_emails=['jonathansfalk@gmail.com'],  
-    to_emails=['jonathansfalk@gmail.com','drwfood@hotmail.com'],
+    to_emails=['jonathansfalk@gmail.com','drwfood@hotmail.com','ryeguy1@tutamail.com'],
     subject='Wongpool Update Report',
     plain_text_content=emailbody)
 
