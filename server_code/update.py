@@ -43,7 +43,7 @@ def write_to_homers(data):
             app_tables.homers.add_row(date=data['date'],gameid=data['gameid'],homers=data['homers'],
                            last_updated=data['last_updated'],plahman=data['plahman'])
             emailbody = fn + " on " + data['date'] + " hit " + str(data['homers']) + "\n"
-        elif result['homers'] != data['homers']:
+        elif (result['homers'] != data['homers']) :
             result['homers'] = data['homers']
             emailbody = fn + " on " + data['date'] + " changed to " + str(data['homers']) + "\n"
         else:
