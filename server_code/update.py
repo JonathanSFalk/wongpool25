@@ -148,16 +148,14 @@ def update():
             emailbody = emailbody + "[Unchanged: " + fullname + " on " + date + " hit " + str(homers) + "]\n"
     if hrlist==[]:
         emailbody = emailbody + 'No Homers Hit'
+    anvil.email.send(from_name="Wongpool 2025",
+                   to=["jonathansfalk@gmail.com",'drwfood@hotmail.com'],
+                   subject="Update",
+                   text=emailbody,
+                  )
 
-    sg = SendGridAPIClient(get_my_secret('sendgrid'))
-    message = Mail(
-    from_email='webmaster@wongpool.com',
-#    to_emails=['jonathansfalk@gmail.com'],  
-    to_emails=['jonathansfalk@gmail.com','drwfood@hotmail.com','ryeguy1@tutamail.com'],
-    subject='Wongpool Update Report',
-    plain_text_content=emailbody)
+    
 
-    response = sg.send(message)
     players = player_list()
     for p in players:
        anvil.server.task_state['Progress'] = p['plahman']
@@ -171,14 +169,13 @@ def update():
     return 
 
 def nocrash():
-    sg = SendGridAPIClient(get_my_secret('sendgrid'))
-    message = Mail(
-    from_email='webmaster@wongpool.com',
-    to_emails=['jonathansfalk@gmail.com'],
-    subject='Wongpool Crash Report',
-    plain_text_content="Update Program Completed")
-    response = sg.send(message)
-    return 
+  anvil.email.send(from_name="Wongpool 2025",
+                   to="jonathansfalk@gmail.com",
+                   subject="Update",
+                   text="No Crash",
+                  )
+
+  return 
   
 
   
