@@ -248,7 +248,7 @@ renamed: true
 runtime_options: {client_version: '3', server_spec: null, server_version: python3-full, version: 2}
 scheduled_tasks:
 - job_id: PWVJQAZL
-  task_name: update
+  task_name: no_update
   time_spec:
     at: {hour: 10, minute: 0}
     every: day
