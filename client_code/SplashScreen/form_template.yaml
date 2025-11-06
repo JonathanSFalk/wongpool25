@@ -4,7 +4,7 @@ container:
     background: ''
     border: ''
     foreground: ''
-    html: "\n<div class = \"jumbotron\">\n  <div container> \n\t<h1 class=\"text-center\">Danny Wong Home Run Pool 2025</h1>\n  <h1 class=\"text-center\"></h1>  \n  <img>    \n \n\t<h4> <b>Aaron Judge, 2022 </b></h4>\n    </div> \n</div>\n  \n\n"
+    html: "\n<div class = \"jumbotron\">\n  <div container> \n\t<h1 class=\"text-center\">Danny Wong Home Run Pool 2025</h1>\n  <h1 class=\"text-center\"></h1>\n    <h1 class=\"text-center\">Now Under Construction for 2026</h1>\n    <h1 class=\"text-center\"></h1>\n\n  <img>    \n \n\t<h4> <b>Aaron Judge, 2022 </b></h4>\n    </div> \n</div>\n  \n\n"
     role: null
     tooltip: ''
     visible: true
