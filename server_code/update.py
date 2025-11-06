@@ -23,8 +23,11 @@ import pytz
 def lupdate():
   #print("this is a test")
   #print('rows: ' + str(len(app_tables.homers.search())))
-  lupdate = app_tables.homers.search(tables.order_by('last_updated', ascending=False))[0]
-  return lupdate['last_updated'].strftime("%m/%d, %H:%M EDT")
+  try:
+     lupdate = app_tables.homers.search(tables.order_by('last_updated', ascending=False))[0]
+     return lupdate['last_updated'].strftime("%m/%d, %H:%M EDT")
+  except:
+     return "No Data"
 
 @anvil.server.callable
 def get_team_abbrev(code):
