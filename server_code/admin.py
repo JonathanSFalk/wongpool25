@@ -1,8 +1,4 @@
-import anvil.facebook.auth
 import anvil.secrets
-import anvil.stripe
-import anvil.google.auth, anvil.google.drive, anvil.google.mail
-from anvil.google.drive import app_files
 import anvil.email
 import anvil.users
 import anvil.tables as tables
@@ -11,7 +7,6 @@ from anvil.tables import app_tables
 import anvil.server
 import anvil.pdf
 import bcrypt
-import stripe 
 import json
 
 @anvil.server.callable
@@ -37,29 +32,6 @@ def pdf2():
 def create_pdf(teamrows):
   pdf = anvil.pdf.render_form("Print", teamrows)
   return pdf
-
-@anvil.server.http_endpoint("/create-checkout-session")
-def create_checkout_session():
-  stripe.api_key = anvil.secrets.get_secret('stripe-test-key')
-  session = stripe.checkout.Session.create(
-    payment_method_types=['card'],
-    line_items=[{
-      'price_data': {
-        'currency': 'usd',
-        'product_data': {
-          'name': 'T-shirt',
-        },
-        'unit_amount': 2000,
-      },
-      'quantity': 1,
-    }],
-    mode='payment',
-    success_url='https://wongpool.anvil.app/success',
-    cancel_url='https://wongpool.anvil.app/cancel',
-  )
-
-  
-  return json.dumps(session.id)
 
 
 @anvil.server.callable

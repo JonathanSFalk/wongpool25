@@ -1,11 +1,7 @@
 from ._anvil_designer import ShowTeamsTemplate
 from anvil import *
-import anvil.facebook.auth
-import stripe.checkout
 import anvil.media
 import anvil.server
-import anvil.google.auth, anvil.google.drive
-from anvil.google.drive import app_files
 import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q

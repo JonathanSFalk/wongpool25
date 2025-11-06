@@ -1,11 +1,7 @@
 from ._anvil_designer import AnalyticsTemplate
 from anvil import *
-import anvil.facebook.auth
 import plotly.graph_objects as go
 import anvil.server
-import stripe.checkout
-import anvil.google.auth, anvil.google.drive
-from anvil.google.drive import app_files
 import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
