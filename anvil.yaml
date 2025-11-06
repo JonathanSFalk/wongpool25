@@ -236,10 +236,7 @@ db_schema:
       type: string
     server: full
     title: Users
-dependencies:
-- dep_id: dep_rrwzbqc70xzhh
-  resolution_hints: {app_id: EKREBQWOD4JB5V7Q, name: Clone of Custom sign-up flow, package_name: custom_signup}
-  version: {dev: false}
+dependencies: []
 metadata: {description: Pool Status, logo_img: 'asset:baseball.jpeg', title: Wongpool}
 name: Wongpool 2025
 native_deps: {head_html: ''}
