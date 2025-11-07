@@ -18,7 +18,7 @@ components:
 - data_bindings:
   - {code: '''https://baseball-reference.com/players/event_hr.fcgi?id=''+self.item[''Player''][''pbbref'']+''&t=b#all_play_by_play''', property: url}
   - {code: '''B-R''', property: text}
-  event_bindings: {click: link_1_click}
+  event_bindings: {}
   layout_properties: {column: KTDXWR}
   name: link_1
   properties: {}
