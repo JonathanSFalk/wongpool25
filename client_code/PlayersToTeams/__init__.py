@@ -11,7 +11,7 @@ class PlayersToTeams(PlayersToTeamsTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    retmat = data_access.get_p2team()
+#    retmat = data_access.get_p2team()
     retmat = anvil.server.call('p2team')
     # Any code you write here will run when the form opens.
     for r in retmat:
