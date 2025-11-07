@@ -10,9 +10,7 @@ class Players(PlayersTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    items = anvil.server.call('players','plast',True)
-    print(f"Got {len(items)} rows")
-    self.repeating_panel_1.items = items[:1]
+    self.repeating_panel_1.items = anvil.server.call('players','plast',True)
     self.button_2.align = "full"
     self.button_2.width = "17em"
     # Any code you write here will run when the form opens.
