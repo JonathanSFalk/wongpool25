@@ -78,7 +78,8 @@ components:
     name: data_row_panel_2
     properties: {}
     type: DataRowPanel
-  - layout_properties: {}
+  - data_bindings: []
+    layout_properties: {}
     name: repeating_panel_1
     properties: {item_template: Players.RowTemplate2, spacing_above: none, spacing_below: none}
     type: RepeatingPanel
