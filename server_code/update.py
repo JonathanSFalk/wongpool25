@@ -299,6 +299,6 @@ def results():
     return anvil.server.HttpResponse(**responses[status])  
 
 @anvil.server.callable
-def nu_update():
+def no_update():
   pass
   
