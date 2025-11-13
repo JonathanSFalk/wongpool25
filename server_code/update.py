@@ -300,5 +300,5 @@ def results():
 
 @anvil.server.callable
 def no_update():
-  pass
+  return None
 
