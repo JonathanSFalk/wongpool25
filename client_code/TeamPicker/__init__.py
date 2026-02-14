@@ -15,8 +15,11 @@ class TeamPicker(TeamPickerTemplate):
     self.ws = anvil.js.window.innerWidth
     self.navbar_links.width = self.ws*.9
     self.user = anvil.users.get_user(allow_remembered=True)
+    if self.user is None:
+      open_form('signup')
+      return
     self.label_3.text = self.user['email']
-    self.cap = 210
+    self.cap = 219
     self.label_2.text = f"Check a box to select that player.  Unchecking unselects.  Any legal team (8 players, Total {self.cap} or less) can be saved"
     self.pset = set()
     # Any code you write here will run when the form opens.

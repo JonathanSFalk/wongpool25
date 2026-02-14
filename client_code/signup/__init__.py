@@ -5,7 +5,6 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-import custom_signup.login_flow
 
 
 class signup(signupTemplate):
@@ -17,8 +16,9 @@ class signup(signupTemplate):
     # Any code you write here will run before the form opens.
 
   def login_button_click(self, **event_args):
+    import Wongpool.login_flow as login_flow
     """This method is called when the button is clicked"""
-    custom_signup.login_flow.login_with_form()
+    login_flow.login_with_form()
     self.update_login_status()
 
   def update_login_status(self):
@@ -31,8 +31,8 @@ class signup(signupTemplate):
      open_form('TeamPicker') 
 
   def signup_button_click(self, **event_args):
-     custom_signup.login_flow.signup_with_form()
-     print("Huh?") 
+     import Wongpool.login_flow as login_flow
+     login_flow.signup_with_form()
      self.update_login_status()
     
     

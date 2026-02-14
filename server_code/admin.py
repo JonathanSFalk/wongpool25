@@ -9,6 +9,7 @@ import anvil.pdf
 import bcrypt
 import json
 
+
 @anvil.server.callable
 def teamlist():
   z = app_tables.teams.search()

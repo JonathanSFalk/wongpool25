@@ -45,12 +45,11 @@ def get_all_homers(date):
                         retn.append([ldict[l][0],date,gn,home,homers,dh])
     return retn
 #open_form('SplashScreen')
-#custom_signup.login_flow.do_email_confirm_or_reset()
-# Open Form1
-#open_form('signup')
-#user = anvil.users.get_user()
+#Open Form1
+open_form('signup')
+user = anvil.users.get_user()
 #while user is None:
-#rm('TeamPicker')
+#  open_form('TeamPicker')
 #update_text = update()
 #z=anvil.server.call('check')
 #tlist = anvil.server.call('team_list')
@@ -61,9 +60,9 @@ def get_all_homers(date):
 #x=anvil.server.call('make_teams')
 #exit
 #anvil.server.call('start_update')
-open_form('HomePage')
+#open_form('HomePage')
 
-#open_form('TeamPicker')
+open_form('TeamPicker')
 
 
 #pdf = anvil.server.call('pdf2')
